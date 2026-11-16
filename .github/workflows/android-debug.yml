@@ -12,7 +12,7 @@ permissions:
 jobs:
   build-android-debug:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -30,7 +30,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          set +o pipefail
           yes | sdkmanager --sdk_root="$ANDROID_HOME" --licenses >/dev/null
+          set -o pipefail
           sdkmanager --sdk_root="$ANDROID_HOME" \
             "platform-tools" \
             "build-tools;35.0.1" \
@@ -89,6 +91,7 @@ jobs:
           PROJECT_DIR="$RUNNER_TEMP/haft-koocheh-source/HAFT_KOOCHEH"
           test -f "$PROJECT_DIR/project.godot"
           echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
+          echo "SOURCE_ARCHIVE_SHA256=$(sha256sum "$SOURCE_ZIP" | cut -d ' ' -f1)" >> "$GITHUB_ENV"
 
       - name: Configure Android debug signing and editor paths
         shell: bash
@@ -197,6 +200,7 @@ jobs:
             sha256sum "$apk"
           done
           {
+            echo "Source archive SHA-256: $SOURCE_ARCHIVE_SHA256"
             echo "Godot: 4.7.2.stable.official"
             echo "JDK: 17"
             echo "Android platform: android-35"
