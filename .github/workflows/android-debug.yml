@@ -1,0 +1,221 @@
+name: Android Debug APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "HAFT_KOOCHEH_phase_1_4*.zip"
+      - ".github/workflows/android-debug.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build-android-debug:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install pinned Android packages
+        shell: bash
+        run: |
+          set -euo pipefail
+          yes | sdkmanager --sdk_root="$ANDROID_HOME" --licenses >/dev/null
+          sdkmanager --sdk_root="$ANDROID_HOME" \
+            "platform-tools" \
+            "build-tools;35.0.1" \
+            "platforms;android-35" \
+            "cmdline-tools;latest" \
+            "cmake;3.10.2.4988404" \
+            "ndk;28.1.13356709"
+          java -version
+          javac -version
+          "$ANDROID_HOME/platform-tools/adb" version
+          test -f "$ANDROID_HOME/platforms/android-35/source.properties"
+          test -f "$ANDROID_HOME/ndk/28.1.13356709/source.properties"
+          test -f "$ANDROID_HOME/cmake/3.10.2.4988404/source.properties"
+          test -x "$ANDROID_HOME/build-tools/35.0.1/apksigner"
+
+      - name: Download Godot 4.7.2 Standard and matching export templates
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/godot-bin" "$RUNNER_TEMP/godot-templates"
+          curl -L --fail --retry 3 \
+            "https://downloads.godotengine.org/?flavor=stable&platform=linux.64&slug=linux.x86_64.zip&version=4.7.2" \
+            -o "$RUNNER_TEMP/godot-linux.zip"
+          unzip -q "$RUNNER_TEMP/godot-linux.zip" -d "$RUNNER_TEMP/godot-bin"
+          GODOT_BIN="$(find "$RUNNER_TEMP/godot-bin" -type f -name 'Godot_v4.7.2-stable_linux.x86_64' -print -quit)"
+          test -n "$GODOT_BIN"
+          chmod +x "$GODOT_BIN"
+          "$GODOT_BIN" --headless --version
+
+          curl -L --fail --retry 3 \
+            "https://downloads.godotengine.org/?flavor=stable&platform=templates&slug=export_templates.tpz&version=4.7.2" \
+            -o "$RUNNER_TEMP/godot-templates.tpz"
+          unzip -q "$RUNNER_TEMP/godot-templates.tpz" -d "$RUNNER_TEMP/godot-templates"
+
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/4.7.2.stable"
+          mkdir -p "$TEMPLATE_DIR"
+          for template in android_debug.apk android_release.apk android_source.zip; do
+            SOURCE_TEMPLATE="$(find "$RUNNER_TEMP/godot-templates" -type f -name "$template" -print -quit)"
+            test -n "$SOURCE_TEMPLATE"
+            cp "$SOURCE_TEMPLATE" "$TEMPLATE_DIR/$template"
+          done
+          printf '4.7.2.stable\n' > "$TEMPLATE_DIR/version.txt"
+          echo "GODOT_BIN=$GODOT_BIN" >> "$GITHUB_ENV"
+
+      - name: Extract phase 1.4 source archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          SOURCE_ZIP="$(find "$GITHUB_WORKSPACE" -maxdepth 1 -type f -name 'HAFT_KOOCHEH_phase_1_4*.zip' -print -quit)"
+          if [[ -z "$SOURCE_ZIP" ]]; then
+            echo "Missing HAFT_KOOCHEH_phase_1_4*.zip in repository root."
+            exit 2
+          fi
+          mkdir -p "$RUNNER_TEMP/haft-koocheh-source"
+          unzip -q "$SOURCE_ZIP" -d "$RUNNER_TEMP/haft-koocheh-source"
+          PROJECT_DIR="$RUNNER_TEMP/haft-koocheh-source/HAFT_KOOCHEH"
+          test -f "$PROJECT_DIR/project.godot"
+          echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
+
+      - name: Configure Android debug signing and editor paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.config/godot" "$HOME/.android"
+          keytool -genkeypair -v \
+            -keystore "$HOME/.android/debug.keystore" \
+            -storepass android \
+            -alias androiddebugkey \
+            -keypass android \
+            -dname "CN=Android Debug,O=Android,C=US" \
+            -keyalg RSA -keysize 2048 -validity 10000
+          cat > "$HOME/.config/godot/editor_settings-4.tres" <<EOF
+          [gd_resource type="EditorSettings" format=3]
+
+          [resource]
+          export/android/java_sdk_path = "$JAVA_HOME"
+          export/android/android_sdk_path = "$ANDROID_HOME"
+          EOF
+
+      - name: Import and validate project
+        shell: bash
+        run: |
+          set -euo pipefail
+          "$GODOT_BIN" --headless --editor --path "$PROJECT_DIR" --quit
+          "$GODOT_BIN" --headless --path "$PROJECT_DIR" --quit-after 3
+
+      - name: Export title and playable prototype Debug APKs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$GITHUB_WORKSPACE/dist" "$PROJECT_DIR/build"
+
+          write_android_preset() {
+            local dir="$1"
+            local app_name="$2"
+            local package_name="$3"
+            cat > "$dir/export_presets.cfg" <<EOF
+          [preset.0]
+          name="Android Debug ARM64"
+          platform="Android"
+          runnable=true
+          advanced_options=false
+          dedicated_server=false
+          custom_features=""
+          export_filter="all_resources"
+          include_filter=""
+          exclude_filter=""
+          export_path=""
+          encryption_include_filters=""
+          encryption_exclude_filters=""
+          encrypt_pck=false
+          encrypt_directory=false
+
+          [preset.0.options]
+          custom_template/debug=""
+          custom_template/release=""
+          gradle_build/use_gradle_build=false
+          gradle_build/min_sdk="23"
+          gradle_build/target_sdk="35"
+          architectures/armeabi-v7a=false
+          architectures/arm64-v8a=true
+          architectures/x86=false
+          architectures/x86_64=false
+          keystore/debug="$HOME/.android/debug.keystore"
+          keystore/debug_user="androiddebugkey"
+          keystore/debug_password="android"
+          package/name="$app_name"
+          package/unique_name="$package_name"
+          package/signed=true
+          version/code=1
+          version/name="1.4-debug"
+          screen/immersive_mode=true
+          EOF
+          }
+
+          write_android_preset "$PROJECT_DIR" "HAFT KOOCHEH" "com.alirezaanari.haftkoocheh"
+          "$GODOT_BIN" --headless --path "$PROJECT_DIR" \
+            --export-debug "Android Debug ARM64" \
+            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_1_4_title_debug.apk"
+
+          PROTOTYPE_DIR="$RUNNER_TEMP/haft-koocheh-prototype"
+          cp -a "$PROJECT_DIR" "$PROTOTYPE_DIR"
+          python3 - "$PROTOTYPE_DIR/project.godot" <<'PY'
+          import pathlib, sys
+          path = pathlib.Path(sys.argv[1])
+          text = path.read_text(encoding="utf-8")
+          old = 'run/main_scene="res://scenes/app/main.tscn"'
+          new = 'run/main_scene="res://scenes/gameplay/coin_score_prototype.tscn"'
+          if old not in text:
+              raise SystemExit("Expected main scene setting was not found; refusing to patch.")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
+          write_android_preset "$PROTOTYPE_DIR" "HAFT KOOCHEH Prototype" "com.alirezaanari.haftkoocheh.prototype"
+          "$GODOT_BIN" --headless --editor --path "$PROTOTYPE_DIR" --quit
+          "$GODOT_BIN" --headless --path "$PROTOTYPE_DIR" \
+            --export-debug "Android Debug ARM64" \
+            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_1_4_coin_prototype_debug.apk"
+
+          for apk in "$GITHUB_WORKSPACE"/dist/*.apk; do
+            test -s "$apk"
+            unzip -t "$apk" >/dev/null
+            "$ANDROID_HOME/build-tools/35.0.1/apksigner" verify --verbose "$apk"
+            "$ANDROID_HOME/build-tools/35.0.1/aapt" dump badging "$apk" > "$apk.badging.txt"
+            sha256sum "$apk"
+          done
+          {
+            echo "Godot: 4.7.2.stable.official"
+            echo "JDK: 17"
+            echo "Android platform: android-35"
+            echo "Build tools: 35.0.1"
+            echo "NDK: 28.1.13356709"
+            echo "CMake: 3.10.2.4988404"
+            echo "ABI: arm64-v8a"
+            echo "Build type: Debug only; no release signing key"
+            echo "Device install test: NOT RUN (no physical device attached to CI)"
+          } > "$GITHUB_WORKSPACE/dist/BUILD_INFO.txt"
+
+      - name: Upload APKs and build metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: haft-koocheh-android-debug-apks
+          path: |
+            dist/*.apk
+            dist/*.badging.txt
+            dist/BUILD_INFO.txt
+          if-no-files-found: error
+          retention-days: 14
