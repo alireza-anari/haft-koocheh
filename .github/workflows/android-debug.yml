@@ -5,7 +5,6 @@ on:
   push:
     paths:
       - "HAFT_KOOCHEH_phase_1_4*.zip"
-      - ".github/workflows/android-debug.yml"
 
 permissions:
   contents: read
