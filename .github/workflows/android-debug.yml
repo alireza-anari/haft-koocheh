@@ -2,9 +2,16 @@ name: Android Debug APK
 
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     paths:
-      - "HAFT_KOOCHEH_phase_1_4*.zip"
+      - "HAFT_KOOCHEH/**"
+      - ".github/workflows/android-debug.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "HAFT_KOOCHEH/**"
+      - ".github/workflows/android-debug.yml"
 
 permissions:
   contents: read
@@ -25,6 +32,8 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
       - name: Install pinned Android packages
         shell: bash
@@ -60,7 +69,10 @@ jobs:
           GODOT_BIN="$(find "$RUNNER_TEMP/godot-bin" -type f -name 'Godot_v4.7.2-stable_linux.x86_64' -print -quit)"
           test -n "$GODOT_BIN"
           chmod +x "$GODOT_BIN"
-          "$GODOT_BIN" --headless --version
+          GODOT_VERSION="$("$GODOT_BIN" --headless --version)"
+          echo "$GODOT_VERSION"
+          test "$GODOT_VERSION" = "4.7.2.stable.official.ed1daf0bf"
+          echo "GODOT_VERSION=$GODOT_VERSION" >> "$GITHUB_ENV"
 
           curl -L --fail --retry 3 \
             "https://downloads.godotengine.org/?flavor=stable&platform=templates&slug=export_templates.tpz&version=4.7.2" \
@@ -77,21 +89,19 @@ jobs:
           printf '4.7.2.stable\n' > "$TEMPLATE_DIR/version.txt"
           echo "GODOT_BIN=$GODOT_BIN" >> "$GITHUB_ENV"
 
-      - name: Extract phase 1.4 source archive
+      - name: Resolve committed Godot source tree
         shell: bash
         run: |
           set -euo pipefail
-          SOURCE_ZIP="$(find "$GITHUB_WORKSPACE" -maxdepth 1 -type f -name 'HAFT_KOOCHEH_phase_1_4*.zip' -print -quit)"
-          if [[ -z "$SOURCE_ZIP" ]]; then
-            echo "Missing HAFT_KOOCHEH_phase_1_4*.zip in repository root."
-            exit 2
-          fi
-          mkdir -p "$RUNNER_TEMP/haft-koocheh-source"
-          unzip -q "$SOURCE_ZIP" -d "$RUNNER_TEMP/haft-koocheh-source"
-          PROJECT_DIR="$RUNNER_TEMP/haft-koocheh-source/HAFT_KOOCHEH"
+          PROJECT_DIR="$GITHUB_WORKSPACE/HAFT_KOOCHEH"
           test -f "$PROJECT_DIR/project.godot"
+          test -f "$PROJECT_DIR/scenes/app/main.tscn"
+          test -f "$PROJECT_DIR/tests/validate_skeleton.py"
           echo "PROJECT_DIR=$PROJECT_DIR" >> "$GITHUB_ENV"
-          echo "SOURCE_ARCHIVE_SHA256=$(sha256sum "$SOURCE_ZIP" | cut -d ' ' -f1)" >> "$GITHUB_ENV"
+          echo "SOURCE_COMMIT=$GITHUB_SHA" >> "$GITHUB_ENV"
+          echo "SOURCE_REF=${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}" >> "$GITHUB_ENV"
+          echo "Resolved project directory: $PROJECT_DIR"
+          sha256sum "$PROJECT_DIR/project.godot"
 
       - name: Configure Android debug signing and editor paths
         shell: bash
@@ -113,6 +123,13 @@ jobs:
           export/android/android_sdk_path = "$ANDROID_HOME"
           EOF
 
+      - name: Run static and documentation validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 "$PROJECT_DIR/tests/validate_skeleton.py"
+          python3 "$PROJECT_DIR/tests/validate_documentation.py"
+
       - name: Import and validate project
         shell: bash
         run: |
@@ -124,7 +141,37 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$GITHUB_WORKSPACE/dist" "$PROJECT_DIR/build"
+          mkdir -p "$GITHUB_WORKSPACE/dist"
+
+          ANDROID_PROJECT_DIR="$RUNNER_TEMP/haft-koocheh-android-title"
+          cp -a "$PROJECT_DIR" "$ANDROID_PROJECT_DIR"
+          rm -rf "$ANDROID_PROJECT_DIR/.godot"
+          python3 - "$ANDROID_PROJECT_DIR/project.godot" <<'PY'
+          import pathlib, sys
+          path = pathlib.Path(sys.argv[1])
+          text = path.read_text(encoding="utf-8")
+          marker = "[rendering]\n"
+          setting = "textures/vram_compression/import_etc2_astc=true"
+          if marker not in text:
+              text += "\n[rendering]\n"
+          if setting not in text:
+              text = text.replace(marker, marker + setting + "\n", 1)
+          if setting not in text:
+              raise SystemExit("Could not enable Android ETC2/ASTC import in temporary build copy.")
+          path.write_text(text, encoding="utf-8")
+          PY
+          "$GODOT_BIN" --headless --editor --path "$ANDROID_PROJECT_DIR" --quit
+
+          if [[ -f "$ANDROID_PROJECT_DIR/scenes/gameplay/coin_score_prototype.tscn" ]]; then
+            PROTOTYPE_SCENE="res://scenes/gameplay/coin_score_prototype.tscn"
+            PROTOTYPE_KIND="coin_score"
+          elif [[ -f "$ANDROID_PROJECT_DIR/scenes/gameplay/failure_prototype.tscn" ]]; then
+            PROTOTYPE_SCENE="res://scenes/gameplay/failure_prototype.tscn"
+            PROTOTYPE_KIND="failure"
+          else
+            echo "No approved gameplay prototype scene found."
+            exit 2
+          fi
 
           write_android_preset() {
             local dir="$1"
@@ -151,8 +198,6 @@ jobs:
           custom_template/debug=""
           custom_template/release=""
           gradle_build/use_gradle_build=false
-          gradle_build/min_sdk="23"
-          gradle_build/target_sdk="35"
           architectures/armeabi-v7a=false
           architectures/arm64-v8a=true
           architectures/x86=false
@@ -164,24 +209,24 @@ jobs:
           package/unique_name="$package_name"
           package/signed=true
           version/code=1
-          version/name="1.4-debug"
+          version/name="development-debug"
           screen/immersive_mode=true
           EOF
           }
 
-          write_android_preset "$PROJECT_DIR" "HAFT KOOCHEH" "com.alirezaanari.haftkoocheh"
-          "$GODOT_BIN" --headless --path "$PROJECT_DIR" \
+          write_android_preset "$ANDROID_PROJECT_DIR" "HAFT KOOCHEH" "com.alirezaanari.haftkoocheh"
+          "$GODOT_BIN" --headless --path "$ANDROID_PROJECT_DIR" \
             --export-debug "Android Debug ARM64" \
-            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_1_4_title_debug.apk"
+            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_title_debug.apk"
 
           PROTOTYPE_DIR="$RUNNER_TEMP/haft-koocheh-prototype"
-          cp -a "$PROJECT_DIR" "$PROTOTYPE_DIR"
-          python3 - "$PROTOTYPE_DIR/project.godot" <<'PY'
-          import pathlib, sys
+          cp -a "$ANDROID_PROJECT_DIR" "$PROTOTYPE_DIR"
+          PROTOTYPE_SCENE="$PROTOTYPE_SCENE" python3 - "$PROTOTYPE_DIR/project.godot" <<'PY'
+          import os, pathlib, sys
           path = pathlib.Path(sys.argv[1])
           text = path.read_text(encoding="utf-8")
           old = 'run/main_scene="res://scenes/app/main.tscn"'
-          new = 'run/main_scene="res://scenes/gameplay/coin_score_prototype.tscn"'
+          new = f'run/main_scene="{os.environ["PROTOTYPE_SCENE"]}"'
           if old not in text:
               raise SystemExit("Expected main scene setting was not found; refusing to patch.")
           path.write_text(text.replace(old, new, 1), encoding="utf-8")
@@ -190,7 +235,7 @@ jobs:
           "$GODOT_BIN" --headless --editor --path "$PROTOTYPE_DIR" --quit
           "$GODOT_BIN" --headless --path "$PROTOTYPE_DIR" \
             --export-debug "Android Debug ARM64" \
-            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_1_4_coin_prototype_debug.apk"
+            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_gameplay_prototype_debug.apk"
 
           for apk in "$GITHUB_WORKSPACE"/dist/*.apk; do
             test -s "$apk"
@@ -200,8 +245,9 @@ jobs:
             sha256sum "$apk"
           done
           {
-            echo "Source archive SHA-256: $SOURCE_ARCHIVE_SHA256"
-            echo "Godot: 4.7.2.stable.official"
+            echo "Source commit: $SOURCE_COMMIT"
+            echo "Source ref: $SOURCE_REF"
+            echo "Godot: $GODOT_VERSION"
             echo "JDK: 17"
             echo "Android platform: android-35"
             echo "Build tools: 35.0.1"
