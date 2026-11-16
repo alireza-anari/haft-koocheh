@@ -141,12 +141,31 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p "$GITHUB_WORKSPACE/dist" "$PROJECT_DIR/build"
+          mkdir -p "$GITHUB_WORKSPACE/dist"
 
-          if [[ -f "$PROJECT_DIR/scenes/gameplay/coin_score_prototype.tscn" ]]; then
+          ANDROID_PROJECT_DIR="$RUNNER_TEMP/haft-koocheh-android-title"
+          cp -a "$PROJECT_DIR" "$ANDROID_PROJECT_DIR"
+          rm -rf "$ANDROID_PROJECT_DIR/.godot"
+          python3 - "$ANDROID_PROJECT_DIR/project.godot" <<'PY'
+          import pathlib, sys
+          path = pathlib.Path(sys.argv[1])
+          text = path.read_text(encoding="utf-8")
+          marker = "[rendering]\n"
+          setting = "textures/vram_compression/import_etc2_astc=true"
+          if marker not in text:
+              text += "\n[rendering]\n"
+          if setting not in text:
+              text = text.replace(marker, marker + setting + "\n", 1)
+          if setting not in text:
+              raise SystemExit("Could not enable Android ETC2/ASTC import in temporary build copy.")
+          path.write_text(text, encoding="utf-8")
+          PY
+          "$GODOT_BIN" --headless --editor --path "$ANDROID_PROJECT_DIR" --quit
+
+          if [[ -f "$ANDROID_PROJECT_DIR/scenes/gameplay/coin_score_prototype.tscn" ]]; then
             PROTOTYPE_SCENE="res://scenes/gameplay/coin_score_prototype.tscn"
             PROTOTYPE_KIND="coin_score"
-          elif [[ -f "$PROJECT_DIR/scenes/gameplay/failure_prototype.tscn" ]]; then
+          elif [[ -f "$ANDROID_PROJECT_DIR/scenes/gameplay/failure_prototype.tscn" ]]; then
             PROTOTYPE_SCENE="res://scenes/gameplay/failure_prototype.tscn"
             PROTOTYPE_KIND="failure"
           else
@@ -179,8 +198,6 @@ jobs:
           custom_template/debug=""
           custom_template/release=""
           gradle_build/use_gradle_build=false
-          gradle_build/min_sdk="23"
-          gradle_build/target_sdk="35"
           architectures/armeabi-v7a=false
           architectures/arm64-v8a=true
           architectures/x86=false
@@ -197,13 +214,13 @@ jobs:
           EOF
           }
 
-          write_android_preset "$PROJECT_DIR" "HAFT KOOCHEH" "com.alirezaanari.haftkoocheh"
-          "$GODOT_BIN" --headless --path "$PROJECT_DIR" \
+          write_android_preset "$ANDROID_PROJECT_DIR" "HAFT KOOCHEH" "com.alirezaanari.haftkoocheh"
+          "$GODOT_BIN" --headless --path "$ANDROID_PROJECT_DIR" \
             --export-debug "Android Debug ARM64" \
-            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_1_4_title_debug.apk"
+            "$GITHUB_WORKSPACE/dist/HAFT_KOOCHEH_title_debug.apk"
 
           PROTOTYPE_DIR="$RUNNER_TEMP/haft-koocheh-prototype"
-          cp -a "$PROJECT_DIR" "$PROTOTYPE_DIR"
+          cp -a "$ANDROID_PROJECT_DIR" "$PROTOTYPE_DIR"
           PROTOTYPE_SCENE="$PROTOTYPE_SCENE" python3 - "$PROTOTYPE_DIR/project.godot" <<'PY'
           import os, pathlib, sys
           path = pathlib.Path(sys.argv[1])
