@@ -1,0 +1,15 @@
+#!/bin/bash
+root=/workspace/scratch/9fd60dbdba5c
+trap ':' INT
+engine="$root/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64"
+args=(--path "$root/HAFT_KOOCHEH" --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 --position 0,0 --script res://tests/test_jump.gd)
+if [ "$1" = visual ]; then
+ args+=(--max-fps 60 -- --visual --output="$root/evidence_1_2/jump_visual.json")
+else
+ args+=(--max-fps "$1" -- --fps-target="$1" --output="$root/evidence_1_2/jump_fps_$1.json")
+fi
+printf '%q\n' "$engine" "${args[@]}" > "$root/evidence_1_2/native_command_$1.txt"
+LIBGL_ALWAYS_SOFTWARE=1 "$engine" "${args[@]}" > "$root/evidence_1_2/native_$1.txt" 2>&1
+result=$?
+printf '%s\n' "$result" > "$root/evidence_1_2/native_exit_$1.txt"
+printf 'JUMP %s exit %s\n' "$1" "$result"

@@ -1,0 +1,5 @@
+{
+  "issue": "Terminal showed unexpected EOF after a graphical capture process because its launcher source was edited while Bash was waiting for Godot.",
+  "scope": "Shell wrapper exit recording; captured Godot suite JSON has17passingcases.",
+  "action": "Discard stale exit metadata, preserve capture attempt separately with exit unknown; bash -n validates final stable launcher; rerun graphical suite without pauses for definitive exit0."
+}

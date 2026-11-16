@@ -1,0 +1,22 @@
+# Phase 1.3 implementation plan
+
+Goal: collision/hazard/fall failure and full fresh-world Restart on approved1.2.
+Spec: upload/Pasted text(2).txt. Detailed approved execution spec is the design authority.
+No product alternatives or new features are required; use the existing documented event queue.
+Godot4.7.2 Standard, Compatibility, physics60, Main/title and old tests unchanged.
+
+1. Extract and compare140baseline files, read all7reference docs. DONE.
+2. Write integration test for missing failure API and run red.
+3. Extend Player minimally: DEAD, configure, freeze, real slide normals, strict global kill_y.
+4. Hazard Area validates exact Player+attempt; emits only contact request, no terminal mutation.
+5. Stable LevelController owns attempt counter and replaces an entire World PackedScene.
+   A necessary extra failure_world.tscn stores that World; failure_prototype.tscn owns controller.
+   Controller priority-100 adjudicates only events from earlier physics frame; fall>hazard>wall.
+6. Expand same test to real collisions, hazards side/top, threshold, freeze/input, stale identity,
+   pending event ordering, fresh world, ten Restarts each of3independent processes, menu unpause.
+7. Run preserved auto-run and27jump cases; import/main/static/doc checks.
+8. Actual native graphical runtime captures wall/hazard/fall/restart with rawlogs.
+9. Review, reports/QA/decisions/state, stage, manifest, SHA/CRC/extract/ZIP byte verification.
+No Coin/Finish/Score/Save/PauseManager, no Android export, no commit/push, no1.4.
+Review focus: stale deferred callbacks, same-frame hazard arbitration, DEAD resurrection,
+restart before/while READY, SceneTree paused exit. Pin each in integration scenarios.

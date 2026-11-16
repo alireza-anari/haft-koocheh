@@ -1,0 +1,3963 @@
+{
+  "stage": "1.2",
+  "status": "COMPLETE",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "renderer": "gl_compatibility / OpenGL3 / Mesa llvmpipe",
+  "physics_hz": 60,
+  "suite_count": 27,
+  "suite_passed": true,
+  "cases": [
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "normal_api",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 31
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.159361
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "space_short",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 31
+        },
+        {
+          "echo": false,
+          "pressed": false,
+          "source": "Space",
+          "tick": 33
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.154696
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "space_hold",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 31
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 32
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 33
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 34
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 35
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 36
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 37
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 38
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 39
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 40
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 41
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 42
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 43
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 44
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 45
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 46
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 47
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 48
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 49
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 50
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 51
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 52
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 53
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 54
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 55
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 56
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 57
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 58
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 59
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 60
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 61
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 62
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 63
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 64
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 65
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 66
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 67
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 68
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 69
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 70
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 71
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 72
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 73
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 74
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 75
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 76
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 77
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 78
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 79
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 80
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 81
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 82
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 83
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 84
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 85
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 86
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 87
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 88
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 89
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 90
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 91
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 92
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 93
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 94
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 95
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 96
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 97
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 98
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 99
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 100
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 101
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 102
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 103
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 104
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 105
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 106
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 107
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 108
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 109
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 110
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 111
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 112
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 113
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 114
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 115
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 116
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 117
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 118
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 119
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 120
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 121
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 122
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 123
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 124
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 125
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 126
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 127
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 128
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 129
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 130
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 131
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 132
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 133
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 134
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 135
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 136
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 137
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 138
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 139
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 140
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 141
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 142
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 143
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 144
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 145
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 146
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 147
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 148
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 149
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 150
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 151
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.154719
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "space_duplicate",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 31
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 32
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 33
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 34
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 35
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 36
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 37
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 38
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 39
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 40
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 41
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 42
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 43
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 44
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 45
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 46
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 47
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 48
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 49
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 50
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 51
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 52
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 53
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 54
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 55
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 56
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 57
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 58
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 59
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 60
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 61
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 62
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 63
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 64
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 65
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 66
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 67
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 68
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 69
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 70
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 71
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 72
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 73
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 74
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 75
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 76
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 77
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 78
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 79
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 80
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 81
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 82
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 83
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 84
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 85
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 86
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 87
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 88
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 89
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 90
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 91
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 92
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 93
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 94
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 95
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 96
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 97
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 98
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 99
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 100
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 101
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 102
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 103
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 104
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 105
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 106
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 107
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 108
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 109
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 110
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 111
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 112
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 113
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 114
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 115
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 116
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 117
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 118
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 119
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 120
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 121
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 122
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 123
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 124
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 125
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 126
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 127
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 128
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 129
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 130
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 131
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 132
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 133
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 134
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 135
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 136
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 137
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 138
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 139
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 140
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 141
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 142
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 143
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 144
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 145
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 146
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 147
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 148
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 149
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 150
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 151
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.157161
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "touch_short",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 31
+        },
+        {
+          "index": 0,
+          "pressed": false,
+          "source": "Touch",
+          "tick": 33
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.163217
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "touch_hold",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 31
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 32
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 33
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 34
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 35
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 36
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 37
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 38
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 39
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 40
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 41
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 42
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 43
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 44
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 45
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 46
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 47
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 48
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 49
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 50
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 51
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 52
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 53
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 54
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 55
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 56
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 57
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 58
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 59
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 60
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 61
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 62
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 63
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 64
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 65
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 66
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 67
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 68
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 69
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 70
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 71
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 72
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 73
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 74
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 75
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 76
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 77
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 78
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 79
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 80
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 81
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 82
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 83
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 84
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 85
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 86
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 87
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 88
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 89
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 90
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 91
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 92
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 93
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 94
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 95
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 96
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 97
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 98
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 99
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 100
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 101
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 102
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 103
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 104
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 105
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 106
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 107
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 108
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 109
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 110
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 111
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 112
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 113
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 114
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 115
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 116
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 117
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 118
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 119
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 120
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 121
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 122
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 123
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 124
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 125
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 126
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 127
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 128
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 129
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 130
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 131
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 132
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 133
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 134
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 135
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 136
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 137
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 138
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 139
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 140
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 141
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 142
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 143
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 144
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 145
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 146
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 147
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 148
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 149
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 150
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 151
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.162308
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "double_early",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 31
+        },
+        {
+          "source": "request_jump",
+          "tick": 34
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.152476
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "double_mid",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 0,
+      "dx": 840.026428222656,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 31
+        },
+        {
+          "source": "request_jump",
+          "tick": 44
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.158652
+    },
+    {
+      "apex_height_px": 100.000030517578,
+      "arm_tick": 30,
+      "case": "coyote_4",
+      "case_ticks": 90,
+      "drop_calibration_ticks": 0,
+      "dx": 279.999694824219,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 60,
+          "vy": -480.0,
+          "y": 603.315063476562
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": 55,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 59
+        }
+      ],
+      "simulation_seconds": 1.0,
+      "ui_consumed": 0,
+      "wall_seconds": 0.047282
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "coyote_5",
+      "case_ticks": 90,
+      "drop_calibration_ticks": 0,
+      "dx": 279.999694824219,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": 55,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 60
+        }
+      ],
+      "simulation_seconds": 1.0,
+      "ui_consumed": 0,
+      "wall_seconds": 0.046577
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "coyote_6",
+      "case_ticks": 90,
+      "drop_calibration_ticks": 0,
+      "dx": 279.999694824219,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": 55,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 61
+        }
+      ],
+      "simulation_seconds": 1.0,
+      "ui_consumed": 0,
+      "wall_seconds": 0.050933
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "disable_coyote",
+      "case_ticks": 90,
+      "drop_calibration_ticks": 0,
+      "dx": 275.333038330078,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": 55,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 57
+        }
+      ],
+      "simulation_seconds": 1.0,
+      "ui_consumed": 0,
+      "wall_seconds": 0.045315
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 0,
+      "case": "drop_calibration",
+      "case_ticks": 27,
+      "drop_calibration_ticks": 27,
+      "dx": 126.000030517578,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [],
+      "simulation_seconds": 0.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.027617
+    },
+    {
+      "apex_height_px": 100.000793457031,
+      "arm_tick": 0,
+      "case": "buffer_5",
+      "case_ticks": 147,
+      "drop_calibration_ticks": 27,
+      "dx": 686.00146484375,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 28,
+          "vy": -480.0,
+          "y": 599.925109863281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        },
+        {
+          "tick": 77,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 22
+        }
+      ],
+      "simulation_seconds": 2.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.12714
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 0,
+      "case": "buffer_7",
+      "case_ticks": 147,
+      "drop_calibration_ticks": 27,
+      "dx": 686.0009765625,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 20
+        }
+      ],
+      "simulation_seconds": 2.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.12962
+    },
+    {
+      "apex_height_px": 100.000793457031,
+      "arm_tick": 0,
+      "case": "buffer_exact6",
+      "case_ticks": 147,
+      "drop_calibration_ticks": 27,
+      "dx": 686.00146484375,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 28,
+          "vy": -480.0,
+          "y": 599.925109863281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        },
+        {
+          "tick": 77,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 21
+        }
+      ],
+      "simulation_seconds": 2.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.14252
+    },
+    {
+      "apex_height_px": 100.000793457031,
+      "arm_tick": 0,
+      "case": "buffer_multi",
+      "case_ticks": 147,
+      "drop_calibration_ticks": 27,
+      "dx": 686.00146484375,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 28,
+          "vy": -480.0,
+          "y": 599.925109863281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        },
+        {
+          "tick": 77,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 22
+        },
+        {
+          "source": "request_jump",
+          "tick": 23
+        }
+      ],
+      "simulation_seconds": 2.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.134034
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 0,
+      "case": "buffer_disable_latch",
+      "case_ticks": 147,
+      "drop_calibration_ticks": 27,
+      "dx": 686.0009765625,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 22
+        }
+      ],
+      "simulation_seconds": 2.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.14011
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 0,
+      "case": "buffer_echo_expired",
+      "case_ticks": 147,
+      "drop_calibration_ticks": 27,
+      "dx": 686.0009765625,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 20
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 21
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 22
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 23
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 24
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 25
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 26
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 27
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 28
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 29
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 30
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 31
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 32
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 33
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 34
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 35
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 36
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 37
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 38
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 39
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 40
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 41
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 42
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 43
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 44
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 45
+        },
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 46
+        }
+      ],
+      "simulation_seconds": 2.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.128958
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 0,
+      "case": "buffer_touch_expired",
+      "case_ticks": 147,
+      "drop_calibration_ticks": 27,
+      "dx": 686.0009765625,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 27,
+          "vy": 0.0,
+          "y": 599.925109863281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 20
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 21
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 22
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 23
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 24
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 25
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 26
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 27
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 28
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 29
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 30
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 31
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 32
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 33
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 34
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 35
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 36
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 37
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 38
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 39
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 40
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 41
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 42
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 43
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 44
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 45
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 46
+        }
+      ],
+      "simulation_seconds": 2.45,
+      "ui_consumed": 0,
+      "wall_seconds": 0.124992
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "invalid_events",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 27,
+      "dx": 840.001647949219,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "echo": true,
+          "pressed": true,
+          "source": "Space",
+          "tick": 31
+        },
+        {
+          "echo": false,
+          "pressed": false,
+          "source": "Space",
+          "tick": 31
+        },
+        {
+          "index": 1,
+          "pressed": false,
+          "source": "Touch",
+          "tick": 31
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.153923
+    },
+    {
+      "apex_height_px": 100.057434082031,
+      "arm_tick": 30,
+      "case": "secondary_touch",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 27,
+      "dx": 840.026916503906,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 121,
+          "vy": -480.0,
+          "y": 599.925170898438
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        },
+        {
+          "tick": 170,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 31
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 32
+        },
+        {
+          "index": 1,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 110
+        },
+        {
+          "index": 0,
+          "pressed": false,
+          "source": "Touch",
+          "tick": 112
+        },
+        {
+          "index": 2,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 113
+        },
+        {
+          "index": 1,
+          "pressed": false,
+          "source": "Touch",
+          "tick": 115
+        },
+        {
+          "index": 2,
+          "pressed": false,
+          "source": "Touch",
+          "tick": 115
+        },
+        {
+          "index": 3,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 120
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.151335
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "ui_space",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 27,
+      "dx": 840.001647949219,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 31
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 1,
+      "wall_seconds": 0.158389
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "ui_touch",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 27,
+      "dx": 840.001647949219,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 31
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 1,
+      "wall_seconds": 0.151382
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "ui_touch_secondary",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 27,
+      "dx": 840.001647949219,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 31
+        },
+        {
+          "index": 1,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 35
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 1,
+      "wall_seconds": 0.160479
+    },
+    {
+      "apex_height_px": 0.0,
+      "arm_tick": 30,
+      "case": "disabled_input",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 27,
+      "dx": 746.667907714844,
+      "failures": [],
+      "flight_seconds": null,
+      "flight_ticks_including_launch": -1,
+      "fps_target": 0.0,
+      "jumps": [],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 31
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 31
+        },
+        {
+          "index": 0,
+          "pressed": true,
+          "source": "Touch",
+          "tick": 31
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.160195
+    },
+    {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "disable_reenable",
+      "case_ticks": 210,
+      "drop_calibration_ticks": 27,
+      "dx": 830.693054199219,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 0.0,
+      "jumps": [
+        {
+          "tick": 32,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 81,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": null,
+      "passed": true,
+      "render_frames": 0,
+      "requests": [
+        {
+          "source": "request_jump",
+          "tick": 31
+        },
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 76
+        },
+        {
+          "source": "request_jump",
+          "tick": 76
+        }
+      ],
+      "simulation_seconds": 2.99999999999999,
+      "ui_consumed": 0,
+      "wall_seconds": 0.141075
+    }
+  ],
+  "fps_comparison": {
+    "30": {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "fps",
+      "case_ticks": 630,
+      "drop_calibration_ticks": 0,
+      "dx": 2800.03344726562,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 30.0,
+      "jumps": [
+        {
+          "tick": 91,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 140,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": 29.9979481403472,
+      "passed": true,
+      "render_frames": 300,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 90
+        },
+        {
+          "echo": false,
+          "pressed": false,
+          "source": "Space",
+          "tick": 91
+        }
+      ],
+      "simulation_seconds": 10.0000000000001,
+      "ui_consumed": 0,
+      "wall_seconds": 10.000684
+    },
+    "60": {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "fps",
+      "case_ticks": 630,
+      "drop_calibration_ticks": 0,
+      "dx": 2800.03344726562,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 60.0,
+      "jumps": [
+        {
+          "tick": 91,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 140,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": 59.9979840677353,
+      "passed": true,
+      "render_frames": 600,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 90
+        },
+        {
+          "echo": false,
+          "pressed": false,
+          "source": "Space",
+          "tick": 91
+        }
+      ],
+      "simulation_seconds": 10.0000000000001,
+      "ui_consumed": 0,
+      "wall_seconds": 10.000336
+    },
+    "120": {
+      "apex_height_px": 100.042358398438,
+      "arm_tick": 30,
+      "case": "fps",
+      "case_ticks": 630,
+      "drop_calibration_ticks": 0,
+      "dx": 2800.03344726562,
+      "failures": [],
+      "flight_seconds": 0.833333333333333,
+      "flight_ticks_including_launch": 50,
+      "fps_target": 120.0,
+      "jumps": [
+        {
+          "tick": 91,
+          "vy": -480.0,
+          "y": 599.981750488281
+        }
+      ],
+      "landings": [
+        {
+          "tick": 17,
+          "vy": 0.0,
+          "y": 599.981750488281
+        },
+        {
+          "tick": 140,
+          "vy": 0.0,
+          "y": 599.925170898438
+        }
+      ],
+      "leave_tick": -1,
+      "measured_fps": 119.870759709456,
+      "passed": true,
+      "render_frames": 1198,
+      "requests": [
+        {
+          "echo": false,
+          "pressed": true,
+          "source": "Space",
+          "tick": 90
+        },
+        {
+          "echo": false,
+          "pressed": false,
+          "source": "Space",
+          "tick": 91
+        }
+      ],
+      "simulation_seconds": 10.0000000000001,
+      "ui_consumed": 0,
+      "wall_seconds": 9.994097
+    }
+  },
+  "open_qa": {
+    "QA-001B": "OPEN",
+    "QA-002": "OPEN"
+  },
+  "hardware_touch": "NOT RUN",
+  "expected_red_test_exit": 1,
+  "expected_mutation_exit": 1,
+  "evidence_directory": "docs/phase_1_2_evidence",
+  "commands": {
+    "engine_version": {
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+      "stderr": ""
+    },
+    "import": {
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--quit"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | Started Registering global classes... (2 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mupdate_scripts_classes\u001b[22m | \u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mupdate_scripts_classes\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Reopening scenes...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading central editor layout...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading plugin window layout...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Editor layout ready.\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\n",
+      "stderr": ""
+    },
+    "main_runtime": {
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--quit-after",
+        "3"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n",
+      "stderr": ""
+    },
+    "auto_run_regression": {
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--fixed-fps",
+        "240",
+        "--script",
+        "res://tests/test_auto_run.gd",
+        "--",
+        "--output=/workspace/scratch/9fd60dbdba5c/evidence_1_2/auto_run.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nPOSITION_SAMPLE {\"simulation_seconds\":1.0,\"tick\":60,\"vx\":280.0,\"x\":439.999694824219,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":2.0,\"tick\":120,\"vx\":280.0,\"x\":720.000427246094,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":2.99999999999999,\"tick\":180,\"vx\":280.0,\"x\":1000.00164794922,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":3.99999999999999,\"tick\":240,\"vx\":280.0,\"x\":1279.99951171875,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":4.99999999999999,\"tick\":300,\"vx\":280.0,\"x\":1559.9970703125,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":5.99999999999998,\"tick\":360,\"vx\":280.0,\"x\":1839.99462890625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":6.99999999999998,\"tick\":420,\"vx\":280.0,\"x\":2119.994140625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":7.99999999999998,\"tick\":480,\"vx\":280.0,\"x\":2399.9990234375,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":9.00000000000003,\"tick\":540,\"vx\":280.0,\"x\":2680.00390625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":10.0000000000001,\"tick\":600,\"vx\":280.0,\"x\":2960.0087890625,\"y\":599.981750488281}\nTEST_RESULT {\"displacement_error_px\":0.00878906247862687,\"displacement_px\":2800.0087890625,\"end_position\":[2960.0087890625,599.981750488281],\"expected_from_actual_ticks_px\":2800.00000000002,\"floor_contact_ticks\":600,\"fps_status\":\"NOT RUN\",\"fps_target\":0.0,\"graphical\":false,\"ground_pass\":true,\"ground_y_range\":[599.981750488281,599.981750488281],\"horizontal_speed_range\":[280.0,280.0],\"max_vertical_speed\":0.0,\"measured_average_fps\":null,\"movement_pass\":true,\"passed\":true,\"physics_hz\":60,\"physics_ticks\":600,\"rendered_frames\":2400,\"simulation_seconds\":10.0000000000001,\"start_position\":[160.0,599.981750488281],\"stop_displacement_px\":0.0,\"stop_pass\":true,\"stop_ticks\":60,\"stopped_vx\":0.0,\"wall_seconds\":0.587453}\n",
+      "stderr": ""
+    },
+    "auto_start_regression": {
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--fixed-fps",
+        "240",
+        "--script",
+        "res://tests/test_auto_run.gd",
+        "--",
+        "--auto-start-smoke"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nAUTO_START_RESULT {\"floor\":true,\"passed\":true,\"physics_ticks\":120,\"vx\":280.0,\"x\":640.666748046875}\n",
+      "stderr": ""
+    },
+    "jump_suite_command": {
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--fixed-fps",
+        "240",
+        "--script",
+        "res://tests/test_jump.gd",
+        "--",
+        "--output=/workspace/scratch/9fd60dbdba5c/evidence_1_2/jump_suite.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"normal_api\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":31}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.159361}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"space_short\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":31},{\"echo\":false,\"pressed\":false,\"source\":\"Space\",\"tick\":33}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.154696}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"space_hold\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":31},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":32},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":33},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":34},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":35},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":36},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":37},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":38},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":39},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":40},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":41},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":42},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":43},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":44},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":45},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":46},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":47},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":48},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":49},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":50},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":51},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":52},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":53},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":54},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":55},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":56},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":57},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":58},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":59},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":60},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":61},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":62},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":63},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":64},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":65},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":66},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":67},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":68},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":69},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":70},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":71},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":72},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":73},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":74},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":75},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":76},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":77},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":78},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":79},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":80},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":81},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":82},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":83},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":84},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":85},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":86},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":87},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":88},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":89},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":90},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":91},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":92},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":93},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":94},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":95},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":96},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":97},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":98},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":99},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":100},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":101},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":102},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":103},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":104},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":105},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":106},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":107},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":108},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":109},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":110},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":111},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":112},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":113},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":114},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":115},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":116},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":117},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":118},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":119},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":120},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":121},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":122},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":123},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":124},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":125},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":126},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":127},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":128},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":129},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":130},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":131},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":132},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":133},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":134},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":135},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":136},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":137},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":138},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":139},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":140},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":141},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":142},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":143},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":144},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":145},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":146},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":147},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":148},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":149},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":150},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":151}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.154719}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"space_duplicate\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":31},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":32},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":33},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":34},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":35},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":36},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":37},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":38},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":39},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":40},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":41},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":42},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":43},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":44},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":45},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":46},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":47},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":48},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":49},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":50},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":51},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":52},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":53},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":54},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":55},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":56},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":57},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":58},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":59},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":60},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":61},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":62},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":63},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":64},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":65},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":66},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":67},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":68},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":69},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":70},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":71},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":72},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":73},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":74},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":75},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":76},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":77},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":78},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":79},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":80},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":81},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":82},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":83},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":84},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":85},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":86},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":87},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":88},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":89},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":90},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":91},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":92},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":93},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":94},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":95},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":96},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":97},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":98},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":99},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":100},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":101},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":102},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":103},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":104},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":105},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":106},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":107},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":108},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":109},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":110},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":111},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":112},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":113},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":114},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":115},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":116},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":117},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":118},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":119},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":120},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":121},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":122},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":123},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":124},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":125},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":126},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":127},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":128},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":129},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":130},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":131},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":132},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":133},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":134},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":135},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":136},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":137},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":138},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":139},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":140},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":141},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":142},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":143},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":144},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":145},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":146},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":147},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":148},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":149},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":150},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":151}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.157161}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"touch_short\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31},{\"index\":0,\"pressed\":false,\"source\":\"Touch\",\"tick\":33}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.163217}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"touch_hold\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":32},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":33},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":34},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":35},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":36},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":37},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":38},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":39},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":40},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":41},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":42},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":43},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":44},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":45},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":46},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":47},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":48},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":49},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":50},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":51},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":52},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":53},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":54},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":55},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":56},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":57},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":58},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":59},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":60},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":61},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":62},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":63},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":64},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":65},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":66},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":67},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":68},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":69},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":70},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":71},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":72},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":73},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":74},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":75},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":76},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":77},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":78},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":79},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":80},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":81},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":82},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":83},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":84},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":85},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":86},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":87},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":88},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":89},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":90},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":91},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":92},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":93},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":94},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":95},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":96},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":97},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":98},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":99},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":100},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":101},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":102},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":103},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":104},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":105},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":106},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":107},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":108},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":109},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":110},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":111},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":112},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":113},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":114},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":115},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":116},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":117},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":118},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":119},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":120},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":121},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":122},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":123},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":124},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":125},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":126},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":127},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":128},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":129},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":130},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":131},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":132},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":133},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":134},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":135},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":136},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":137},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":138},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":139},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":140},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":141},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":142},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":143},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":144},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":145},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":146},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":147},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":148},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":149},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":150},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":151}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.162308}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"double_early\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":31},{\"source\":\"request_jump\",\"tick\":34}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.152476}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"double_mid\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":31},{\"source\":\"request_jump\",\"tick\":44}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.158652}\nCASE_RESULT {\"apex_height_px\":100.000030517578,\"arm_tick\":30,\"case\":\"coyote_4\",\"case_ticks\":90,\"drop_calibration_ticks\":0,\"dx\":279.999694824219,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[{\"tick\":60,\"vy\":-480.0,\"y\":603.315063476562}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":55,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":59}],\"simulation_seconds\":1.0,\"ui_consumed\":0,\"wall_seconds\":0.047282}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"coyote_5\",\"case_ticks\":90,\"drop_calibration_ticks\":0,\"dx\":279.999694824219,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":55,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":60}],\"simulation_seconds\":1.0,\"ui_consumed\":0,\"wall_seconds\":0.046577}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"coyote_6\",\"case_ticks\":90,\"drop_calibration_ticks\":0,\"dx\":279.999694824219,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":55,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":61}],\"simulation_seconds\":1.0,\"ui_consumed\":0,\"wall_seconds\":0.050933}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"disable_coyote\",\"case_ticks\":90,\"drop_calibration_ticks\":0,\"dx\":275.333038330078,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":55,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":57}],\"simulation_seconds\":1.0,\"ui_consumed\":0,\"wall_seconds\":0.045315}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":0,\"case\":\"drop_calibration\",\"case_ticks\":27,\"drop_calibration_ticks\":27,\"dx\":126.000030517578,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[],\"simulation_seconds\":0.45,\"ui_consumed\":0,\"wall_seconds\":0.027617}\nCASE_RESULT {\"apex_height_px\":100.000793457031,\"arm_tick\":0,\"case\":\"buffer_5\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.00146484375,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":28,\"vy\":-480.0,\"y\":599.925109863281}],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281},{\"tick\":77,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":22}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.12714}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":0,\"case\":\"buffer_7\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.0009765625,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":20}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.12962}\nCASE_RESULT {\"apex_height_px\":100.000793457031,\"arm_tick\":0,\"case\":\"buffer_exact6\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.00146484375,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":28,\"vy\":-480.0,\"y\":599.925109863281}],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281},{\"tick\":77,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":21}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.14252}\nCASE_RESULT {\"apex_height_px\":100.000793457031,\"arm_tick\":0,\"case\":\"buffer_multi\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.00146484375,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":28,\"vy\":-480.0,\"y\":599.925109863281}],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281},{\"tick\":77,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":22},{\"source\":\"request_jump\",\"tick\":23}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.134034}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":0,\"case\":\"buffer_disable_latch\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.0009765625,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":22}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.14011}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":0,\"case\":\"buffer_echo_expired\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.0009765625,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":20},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":21},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":22},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":23},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":24},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":25},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":26},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":27},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":28},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":29},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":30},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":31},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":32},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":33},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":34},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":35},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":36},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":37},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":38},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":39},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":40},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":41},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":42},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":43},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":44},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":45},{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":46}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.128958}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":0,\"case\":\"buffer_touch_expired\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.0009765625,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":20},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":21},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":22},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":23},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":24},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":25},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":26},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":27},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":28},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":29},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":30},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":32},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":33},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":34},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":35},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":36},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":37},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":38},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":39},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":40},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":41},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":42},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":43},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":44},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":45},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":46}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.124992}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"invalid_events\",\"case_ticks\":210,\"drop_calibration_ticks\":27,\"dx\":840.001647949219,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"echo\":true,\"pressed\":true,\"source\":\"Space\",\"tick\":31},{\"echo\":false,\"pressed\":false,\"source\":\"Space\",\"tick\":31},{\"index\":1,\"pressed\":false,\"source\":\"Touch\",\"tick\":31}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.153923}\nCASE_RESULT {\"apex_height_px\":100.057434082031,\"arm_tick\":30,\"case\":\"secondary_touch\",\"case_ticks\":210,\"drop_calibration_ticks\":27,\"dx\":840.026916503906,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281},{\"tick\":121,\"vy\":-480.0,\"y\":599.925170898438}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438},{\"tick\":170,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":32},{\"index\":1,\"pressed\":true,\"source\":\"Touch\",\"tick\":110},{\"index\":0,\"pressed\":false,\"source\":\"Touch\",\"tick\":112},{\"index\":2,\"pressed\":true,\"source\":\"Touch\",\"tick\":113},{\"index\":1,\"pressed\":false,\"source\":\"Touch\",\"tick\":115},{\"index\":2,\"pressed\":false,\"source\":\"Touch\",\"tick\":115},{\"index\":3,\"pressed\":true,\"source\":\"Touch\",\"tick\":120}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.151335}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"ui_space\",\"case_ticks\":210,\"drop_calibration_ticks\":27,\"dx\":840.001647949219,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":31}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":1,\"wall_seconds\":0.158389}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"ui_touch\",\"case_ticks\":210,\"drop_calibration_ticks\":27,\"dx\":840.001647949219,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":1,\"wall_seconds\":0.151382}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"ui_touch_secondary\",\"case_ticks\":210,\"drop_calibration_ticks\":27,\"dx\":840.001647949219,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31},{\"index\":1,\"pressed\":true,\"source\":\"Touch\",\"tick\":35}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":1,\"wall_seconds\":0.160479}\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":30,\"case\":\"disabled_input\",\"case_ticks\":210,\"drop_calibration_ticks\":27,\"dx\":746.667907714844,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":31},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":31},{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.160195}\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"disable_reenable\",\"case_ticks\":210,\"drop_calibration_ticks\":27,\"dx\":830.693054199219,\"failures\":[],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":31},{\"echo\":false,\"pressed\":true,\"source\":\"Space\",\"tick\":76},{\"source\":\"request_jump\",\"tick\":76}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.141075}\nJUMP_SUITE {\"case_count\":27,\"passed\":true,\"physics_hz\":60}\n",
+      "stderr": ""
+    },
+    "static_validation": {
+      "command": [
+        "python3",
+        "tests/validate_skeleton.py"
+      ],
+      "cwd": "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+      "exit_code": 0,
+      "stdout": "PASS: static configuration, main-scene references, module directories and required docs\nLIMIT: this check does not prove Godot parsing, runtime, rendering or Android export\n",
+      "stderr": ""
+    },
+    "documentation_validation": {
+      "command": [
+        "python3",
+        "tests/validate_documentation.py",
+        "--baseline",
+        "../HAFT_KOOCHEH_phase_1_1_R1.zip"
+      ],
+      "cwd": "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+      "exit_code": 0,
+      "stdout": "PASS: 5 core docs; 52 local Markdown links resolve\nLIMIT: 0 external Markdown links not HTTP-tested by this validator\nPASS: 10 shared level IDs/names; 5 movement values; scoring formula; decision IDs; 22 historical planned cases retained; QA-001B and QA-002 remain open\nPASS: only approved auto-run scripts/scenes; no external asset, system manager or export preset\nPASS: 90-file baseline preserved; only permitted jump/docs/report/test changes; original decisions and historical QA retained\nLIMIT: this is mechanical document/scope validation; semantic review, graphics, gameplay and Android are separate\n",
+      "stderr": ""
+    }
+  },
+  "limitations": [
+    "Touch InputEvent injection tested; no physical touch device",
+    "Capture test pauses 20 wall seconds at launch/apex/landing; FPS tests never pause",
+    "No Android export or Editor usability claim"
+  ],
+  "integrity": "See git_validation_results.json and phase_1_2_manifest.json; final packaging verifies Index, disk and ZIP bytes",
+  "code_review": {
+    "status": "READY",
+    "critical": [],
+    "important": [],
+    "read_only": true,
+    "checks": [
+      "Fixed launch -480, subsequent gravity +20/tick, horizontal280",
+      "Real CharacterBody2D and Control GUI input routing",
+      "27 unique passing cases; graphical30/60/120 metrics supported by traces",
+      "Baseline project/scenes/auto-run test byte-preserved",
+      "Hardware touch NOT RUN; no stage1.3 scope"
+    ]
+  },
+  "fps_cross_comparison": {
+    "status": "PASS",
+    "apex_difference_px": 0.0,
+    "all_actual_physics_ticks": 600,
+    "all_input_request_tick": 90,
+    "all_jump_tick": 91,
+    "all_land_tick": 140,
+    "all_dx_error_px": 0.03344726562
+  },
+  "packaging_command": "python3 tools/phase_1_2/package_project.py (recorded copy: docs/phase_1_2_evidence/packaging_runner.txt)"
+}

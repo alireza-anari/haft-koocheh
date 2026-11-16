@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+    "--headless",
+    "--path",
+    "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+    "--fixed-fps",
+    "60",
+    "--script",
+    "res://tests/test_jump.gd",
+    "--",
+    "--case=ui_touch"
+  ],
+  "exit_code": 1,
+  "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nCASE_RESULT {\"apex_height_px\":100.042358398438,\"arm_tick\":30,\"case\":\"ui_touch\",\"case_ticks\":210,\"drop_calibration_ticks\":0,\"dx\":840.026428222656,\"failures\":[\"jump count 1 expected 0\",\"UI did not actually consume event\"],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":32,\"vy\":-480.0,\"y\":599.981750488281}],\"landings\":[{\"tick\":17,\"vy\":0.0,\"y\":599.981750488281},{\"tick\":81,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":false,\"render_frames\":0,\"requests\":[{\"index\":0,\"pressed\":true,\"source\":\"Touch\",\"tick\":31}],\"simulation_seconds\":2.99999999999999,\"ui_consumed\":0,\"wall_seconds\":0.124175}\nJUMP_SUITE {\"case_count\":1,\"passed\":false,\"physics_hz\":60}\n",
+  "stderr": ""
+}

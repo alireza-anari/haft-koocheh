@@ -1,0 +1,51 @@
+from pathlib import Path
+from zipfile import ZipFile,ZIP_DEFLATED
+import json,subprocess,hashlib
+r=Path(__file__).resolve().parents[2];p=r/'HAFT_KOOCHEH';e=p/'docs/phase_1_2_evidence';zpath=r/'HAFT_KOOCHEH_phase_1_2.zip'
+def git(*args,input=None):
+ a=subprocess.run(['git',*args],cwd=p,input=input,text=True,capture_output=True);return {'command':['git',*args],'exit_code':a.returncode,'stdout':a.stdout,'stderr':a.stderr}
+def dump(path,obj):path.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+def source_files():return sorted(x.relative_to(p).as_posix() for x in p.rglob('*') if x.is_file() and not {'.git','.godot','__pycache__'}.intersection(x.relative_to(p).parts))
+manifest=p/'docs/phase_1_2_manifest.json'
+manifest.touch(exist_ok=True)
+names=source_files()
+dump(manifest,dict(stage='1.2',file_count=len(names),files=names,note='Path manifest; hashes excluded to avoid self-reference. All delivered bytes are compared against Git Index and ZIP during packaging.'))
+# This runner is evidence, stored with an extension ignored by Godot.
+# Caller copies the finalized runner before invoking, so it is included in names above.
+assert git('add','--all')['exit_code']==0
+index=git('ls-files'); assert index['exit_code']==0
+indexed=index['stdout'].splitlines();assert indexed==names
+raw=git('diff','--cached','--check')
+scoped=git('diff','--cached','--check','--','.',':(exclude)docs/qa001_evidence/*.txt',':(exclude)docs/phase_1_1_r1_evidence/*.txt',':(exclude)docs/phase_1_2_evidence/*.txt')
+assert scoped['exit_code']==0,scoped
+ignore=git('check-ignore','--stdin',input='.godot/probe\nbuild/test.apk\n.env\nexample.keystore\n__pycache__/probe.pyc\n')
+assert ignore['exit_code']==0 and len(ignore['stdout'].splitlines())==5
+assert git('ls-files','--others','--exclude-standard')['stdout']==''
+with ZipFile(r/'HAFT_KOOCHEH_phase_1_1_R1.zip') as old:
+ baseline={n.removeprefix('HAFT_KOOCHEH/'):old.read(n) for n in old.namelist() if not n.endswith('/')}
+assert len(baseline)==90 and set(baseline).issubset(names)
+changed=sorted(n for n,b in baseline.items() if (p/n).read_bytes()!=b)
+new=sorted(set(names)-set(baseline))
+self_name='docs/git_validation_results.json'
+changed=sorted(set(changed) | {self_name})
+checks=[index,raw,scoped,ignore,git('remote','-v'),git('status','--short')]
+report={'stage':'1.2','status':'PASS','repository':'local unborn HEAD; no commit or remote; all delivered files staged','index_file_count':len(names),'zip_file_count':len(names),'index_files':names,'baseline_file_count':90,'baseline_deleted':[],'changed_baseline_files':changed,'new_files':new,'disk_index_byte_identical':True,'zip_index_byte_identical':True,'zip_crc':'PASS','manifest_paths_identical':True,'self_reference_policy':'This file is staged again after generation; its own hash is omitted. ZIP and Index still compare every byte including this file. Archive digest is external to archive.','sha256_except_this_file':{n:hashlib.sha256((p/n).read_bytes()).hexdigest() for n in names if n!=self_name},'commands':checks,'raw_diff_check_note':'Exit2 only preserved raw evidence whitespace; scoped source/docs check exit0. Raw historical evidence is not edited.'}
+dump(p/self_name,report);assert git('add',self_name)['exit_code']==0
+for n in names:
+ staged=subprocess.run(['git','show',':'+n],cwd=p,capture_output=True,check=True).stdout
+ assert staged==(p/n).read_bytes(),n
+assert git('diff','--name-only')['stdout']==''
+assert git('ls-files','--others','--exclude-standard')['stdout']==''
+with ZipFile(zpath,'w',ZIP_DEFLATED) as z:
+ for directory in sorted(x for x in p.rglob('*') if x.is_dir() and not {'.git','.godot','__pycache__'}.intersection(x.relative_to(p).parts)):
+  z.writestr('HAFT_KOOCHEH/'+directory.relative_to(p).as_posix()+'/',b'')
+ for n in names:z.write(p/n,'HAFT_KOOCHEH/'+n)
+with ZipFile(zpath) as z:
+ assert z.testzip() is None
+ assert sorted(n.removeprefix('HAFT_KOOCHEH/') for n in z.namelist() if not n.endswith('/'))==names
+ for n in names:assert z.read('HAFT_KOOCHEH/'+n)==(p/n).read_bytes(),n
+assert json.loads(manifest.read_text())['files']==names
+assert json.loads((p/self_name).read_text())['index_files']==names
+result={'command':['python3',str(Path(__file__).resolve())],'exit_code':0,'result':'PASS','file_count':len(names),'zip_size_bytes':zpath.stat().st_size,'zip_sha256':hashlib.sha256(zpath.read_bytes()).hexdigest(),'changed_baseline_files':changed,'new_file_count':len(new),'all_90_baseline_paths_preserved':True,'disk_index_manifest_zip_match':True,'raw_diff_exit':raw['exit_code'],'scoped_diff_exit':scoped['exit_code']}
+dump(r/'HAFT_KOOCHEH_phase_1_2_delivery_validation.json',result)
+print(json.dumps(result,ensure_ascii=False,indent=2))

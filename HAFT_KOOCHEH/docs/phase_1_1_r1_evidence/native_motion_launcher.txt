@@ -1,0 +1,6 @@
+#!/bin/bash
+root=/workspace/scratch/9fd60dbdba5c
+trap ':' INT
+LIBGL_ALWAYS_SOFTWARE=1 "$root/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64" --path "$root/HAFT_KOOCHEH" --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 --position 0,0 --max-fps "$1" --script res://tests/test_auto_run.gd -- --hold --fps-target="$1" --output="$root/evidence_1_1_r1/motion_$1.json" > "$root/evidence_1_1_r1/graphical_$1.txt" 2>&1
+result=$?
+printf '%s\n' "$result" > "$root/evidence_1_1_r1/graphical_${1}_exit.txt"

@@ -1,0 +1,98 @@
+[
+  {
+    "screenshot": "main_1280x720.jpg",
+    "size": [
+      1280,
+      720
+    ],
+    "content_rect_exclusive": [
+      0,
+      0,
+      1280,
+      720
+    ],
+    "title_ink_bbox_exclusive": [
+      460,
+      343,
+      819,
+      378
+    ],
+    "title_ink_center": [
+      639.5,
+      360.5
+    ],
+    "expected_center": [
+      640.0,
+      360.0
+    ],
+    "center_error_px": [
+      -0.5,
+      0.5
+    ],
+    "method": "Threshold analysis of original screenshots: min(R,G,B)>200 for title ink; max(R,G,B)>20 for content; manual visual inspection also performed"
+  },
+  {
+    "screenshot": "main_1600x720.jpg",
+    "size": [
+      1600,
+      720
+    ],
+    "content_rect_exclusive": [
+      160,
+      0,
+      1440,
+      720
+    ],
+    "title_ink_bbox_exclusive": [
+      620,
+      343,
+      979,
+      378
+    ],
+    "title_ink_center": [
+      799.5,
+      360.5
+    ],
+    "expected_center": [
+      800.0,
+      360.0
+    ],
+    "center_error_px": [
+      -0.5,
+      0.5
+    ],
+    "method": "Threshold analysis of original screenshots: min(R,G,B)>200 for title ink; max(R,G,B)>20 for content; manual visual inspection also performed"
+  },
+  {
+    "screenshot": "main_1024x768.jpg",
+    "size": [
+      1024,
+      768
+    ],
+    "content_rect_exclusive": [
+      0,
+      96,
+      1024,
+      672
+    ],
+    "title_ink_bbox_exclusive": [
+      368,
+      371,
+      656,
+      398
+    ],
+    "title_ink_center": [
+      512.0,
+      384.5
+    ],
+    "expected_center": [
+      512.0,
+      384.0
+    ],
+    "center_error_px": [
+      0.0,
+      0.5
+    ],
+    "method": "Threshold analysis of original screenshots: min(R,G,B)>200 for title ink; max(R,G,B)>20 for content; manual visual inspection also performed"
+  }
+]

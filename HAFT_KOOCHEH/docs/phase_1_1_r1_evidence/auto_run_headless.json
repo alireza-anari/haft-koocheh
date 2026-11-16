@@ -1,0 +1,39 @@
+{
+	"displacement_error_px": 0.00878906247862687,
+	"displacement_px": 2800.0087890625,
+	"end_position": [
+		2960.0087890625,
+		599.981750488281
+	],
+	"expected_from_actual_ticks_px": 2800.00000000002,
+	"floor_contact_ticks": 600,
+	"fps_status": "NOT RUN",
+	"fps_target": 0.0,
+	"graphical": false,
+	"ground_pass": true,
+	"ground_y_range": [
+		599.981750488281,
+		599.981750488281
+	],
+	"horizontal_speed_range": [
+		280.0,
+		280.0
+	],
+	"max_vertical_speed": 0.0,
+	"measured_average_fps": null,
+	"movement_pass": true,
+	"passed": true,
+	"physics_hz": 60,
+	"physics_ticks": 600,
+	"rendered_frames": 600,
+	"simulation_seconds": 10.0000000000001,
+	"start_position": [
+		160.0,
+		599.981750488281
+	],
+	"stop_displacement_px": 0.0,
+	"stop_pass": true,
+	"stop_ticks": 60,
+	"stopped_vx": 0.0,
+	"wall_seconds": 0.320059
+}

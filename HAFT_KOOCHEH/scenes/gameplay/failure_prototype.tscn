@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/gameplay/level_controller.gd" id="Controller"]
+[ext_resource type="PackedScene" path="res://scenes/gameplay/failure_world.tscn" id="World"]
+
+[node name="FailurePrototype" type="Node2D"]
+script = ExtResource("Controller")
+world_scene = ExtResource("World")
+kill_y = 1000.0

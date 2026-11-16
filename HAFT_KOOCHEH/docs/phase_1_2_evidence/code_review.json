@@ -1,0 +1,13 @@
+{
+  "status": "READY",
+  "critical": [],
+  "important": [],
+  "read_only": true,
+  "checks": [
+    "Fixed launch -480, subsequent gravity +20/tick, horizontal280",
+    "Real CharacterBody2D and Control GUI input routing",
+    "27 unique passing cases; graphical30/60/120 metrics supported by traces",
+    "Baseline project/scenes/auto-run test byte-preserved",
+    "Hardware touch NOT RUN; no stage1.3 scope"
+  ]
+}

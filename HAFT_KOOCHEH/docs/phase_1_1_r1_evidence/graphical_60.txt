@@ -1,0 +1,16 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+POSITION_SAMPLE {"simulation_seconds":1.0,"tick":60,"vx":280.0,"x":439.999694824219,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":2.0,"tick":120,"vx":280.0,"x":720.000427246094,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":2.99999999999999,"tick":180,"vx":280.0,"x":1000.00164794922,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":3.99999999999999,"tick":240,"vx":280.0,"x":1279.99951171875,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":4.99999999999999,"tick":300,"vx":280.0,"x":1559.9970703125,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":5.99999999999998,"tick":360,"vx":280.0,"x":1839.99462890625,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":6.99999999999998,"tick":420,"vx":280.0,"x":2119.994140625,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":7.99999999999998,"tick":480,"vx":280.0,"x":2399.9990234375,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":9.00000000000003,"tick":540,"vx":280.0,"x":2680.00390625,"y":599.981750488281}
+POSITION_SAMPLE {"simulation_seconds":10.0000000000001,"tick":600,"vx":280.0,"x":2960.0087890625,"y":599.981750488281}
+TEST_RESULT {"displacement_error_px":0.00878906247862687,"displacement_px":2800.0087890625,"end_position":[2960.0087890625,599.981750488281],"expected_from_actual_ticks_px":2800.00000000002,"floor_contact_ticks":600,"fps_status":"PASS","fps_target":60.0,"graphical":true,"ground_pass":true,"ground_y_range":[599.981750488281,599.981750488281],"horizontal_speed_range":[280.0,280.0],"max_vertical_speed":0.0,"measured_average_fps":60.0016560457069,"movement_pass":true,"passed":true,"physics_hz":60,"physics_ticks":600,"rendered_frames":600,"simulation_seconds":10.0000000000001,"start_position":[160.0,599.981750488281],"stop_displacement_px":0.0,"stop_pass":true,"stop_ticks":60,"stopped_vx":0.0,"wall_seconds":9.999724}

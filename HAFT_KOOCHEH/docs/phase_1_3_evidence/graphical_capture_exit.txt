@@ -1,0 +1,1 @@
+NOT RECORDED: launcher file was edited while its shell waited for Godot; stale prior exit file discarded. Godot result JSON itself passed; clean final run recorded separately.

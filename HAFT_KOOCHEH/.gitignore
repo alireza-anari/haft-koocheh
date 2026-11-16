@@ -1,0 +1,27 @@
+# Godot cache and editor state
+.godot/
+.export/
+export.cfg
+export_credentials.cfg
+*.tmp
+*.log
+# Local tooling
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+*.pyc
+override.cfg
+# Build outputs and signing material
+/build/
+/builds/
+/dist/
+/android/build/
+*.apk
+*.aab
+*.keystore
+*.jks
+.env
+.env.*
+# Track Godot 4 .uid sidecars and export_presets.cfg when created.
