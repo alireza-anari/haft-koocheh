@@ -1,0 +1,24 @@
+from pathlib import Path
+import re,json,hashlib,subprocess
+r=Path(__file__).resolve().parents[2];p=r/'HAFT_KOOCHEH';raw=r/'evidence_1_4_host_migration';base=json.loads((raw/'baseline_validation.json').read_text())['files_sha256']
+allowed={'docs/PROJECT_STATE.md','docs/PHASE_1_4_REPORT.md','docs/PHASE_1_4_FPS_RETEST_REPORT.md','docs/phase_1_4_manifest.json','docs/git_validation_results.json'}
+changed=[]
+for n,h in base.items():
+ assert (p/n).is_file(),n
+ if hashlib.sha256((p/n).read_bytes()).hexdigest()!=h:changed.append(n);assert n in allowed,n
+links=0
+for f in [p/'README.md',*sorted((p/'docs').glob('*.md'))]:
+ text=re.sub(r'^```[^\n]*\n.*?^```\s*$','',f.read_text(),flags=re.M|re.S)
+ for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)',text):
+  if re.match(r'https?://',target):continue
+  path,_,anchor=target.partition('#');resolved=(f.parent/path).resolve() if path else f
+  assert resolved.is_relative_to(p.resolve()) and resolved.is_file(),(f.name,target)
+  assert not anchor,(f.name,target)
+  links+=1
+core=[n for n in base if n.endswith(('.gd','.tscn','.py','.uid')) or n=='project.godot']
+assert all(hashlib.sha256((p/n).read_bytes()).hexdigest()==base[n] for n in core)
+a=subprocess.run(['python3','tests/validate_skeleton.py'],cwd=p,capture_output=True,text=True)
+assert a.returncode==0
+result={'command':['python3',str(Path(__file__).resolve())],'exit_code':0,'baseline_paths_preserved':378,'core_files_byte_identical':core,'changed_docs_so_far':changed,'resolved_local_links':links,'documentation_scope':'Read-only link/source-preservation check; original documentation validator kept byte-identical; old scope allowlist not modified','static_validation':{'command':['python3','tests/validate_skeleton.py'],'exit_code':a.returncode,'stdout':a.stdout,'stderr':a.stderr},'new_runtime_tests':'NOT RUN per host precondition gate'}
+(raw/'read_only_validation.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+print('PASS: static,',links,'links,378baseline paths; all code/scenes/tests/settings byte-identical')

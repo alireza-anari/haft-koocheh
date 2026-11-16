@@ -1,0 +1,8 @@
+#!/bin/bash
+root=/workspace/scratch/9fd60dbdba5c
+sleep 5
+for n in 1 2 3; do bash "$root/tools/phase_1_4_fps_retest/run_native.sh final120_$n 120; done
+bash "$root/tools/phase_1_4_fps_retest/run_native.sh final30 30
+bash "$root/tools/phase_1_4_fps_retest/run_native.sh final60 60
+{ date -u; xrandr --current; xfconf-query -c xfwm4 -p /general/use_compositing; } > "$root/evidence_1_4_fps_retest/host_after.txt" 2>&1
+printf 'FINAL RETEST BATCH COMPLETE\n'

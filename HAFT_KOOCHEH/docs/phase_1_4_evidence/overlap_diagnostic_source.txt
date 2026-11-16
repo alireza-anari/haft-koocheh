@@ -1,0 +1,16 @@
+extends SceneTree
+func _initialize() -> void:
+	var world: Node2D = (load("res://scenes/gameplay/coin_score_world.tscn") as PackedScene).instantiate() as Node2D
+	var hazard: Area2D = world.get_node("Hazard")
+	hazard.position = world.get_node("Coin1").position
+	var shape := RectangleShape2D.new()
+	shape.size = Vector2(32, 32)
+	hazard.get_node("CollisionShape2D").shape = shape
+	print("BEFORE_PACK ", hazard.get_node("CollisionShape2D").shape.size)
+	var packed := PackedScene.new()
+	packed.pack(world)
+	var copy: Node2D = packed.instantiate() as Node2D
+	print("AFTER_PACK ", copy.get_node("Hazard/CollisionShape2D").shape.size, " COIN ", copy.get_node("Coin1/CollisionShape2D").shape.size)
+	world.free()
+	copy.free()
+	quit()

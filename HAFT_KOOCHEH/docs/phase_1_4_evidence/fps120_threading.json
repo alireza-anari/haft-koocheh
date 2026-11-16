@@ -1,0 +1,16 @@
+{
+  "second_attempt_command": "LP_NUM_THREADS=2 bash /workspace/scratch/9fd60dbdba5c/tools/phase_1_4/launch_graphical.sh 120",
+  "second_attempt_result": "FAIL actual95.053680FPS, score30/coins3/600ticks correct",
+  "next_control": "Delay launch until UI observation finishes, LP_NUM_THREADS=1; no physics/test threshold changes.",
+  "final_attempt_command": "sleep5; LP_NUM_THREADS=4 bash tools/phase_1_4/launch_graphical.sh120",
+  "final_attempt_result": {
+    "actual_fps": 101.635968598791,
+    "fps_target": 120.0,
+    "frames": 1015,
+    "input_sequence": "start_run after30settle ticks; no Jump or Restart input",
+    "physics_ticks": 600,
+    "simulation_seconds": 10.0,
+    "wall_seconds": 9.986622
+  },
+  "final_status": "FAIL actual renderer target; Score30/Coins3/600ticks correct.120Hz confirmation remains unresolved; no thresholds changed."
+}

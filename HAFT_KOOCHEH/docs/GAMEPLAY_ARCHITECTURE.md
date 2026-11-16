@@ -250,3 +250,30 @@ KillZone مرز بالای820 دارد؛ یک Hazard با reason=fall است، �
 
 exit_to_menu تلاش را می‌بندد، Player را Freeze، SceneTree.paused را false و بازگشت
 به Main را deferred می‌کند. این API، PauseManager یا منوی جدید نیست.
+
+## ۱۴. پیاده‌سازی مرحله۱.۴ — Coin و Score
+
+دامنه اجرایی اکنون Coin/Score تلاش را نیز دارد؛ متن۱.۳ بخش قبل تاریخی است.
+Coin فقط pickup_requested می‌دهد و pending می‌شود. Level registry شناسه یکتا به
+WeakRef نمونه World را می‌سازد و Player/attempt/source instance ID/تعلقWorld/RUNNING
+را هم هنگام صف و هم هنگام داوری بررسی می‌کند. شناسه خالی، تکراری یا خارج الگوی
+[a-z][a-z0-9_]*، layout_error و توقف در READY ایجاد می‌کند؛ هشدار تشخیصی حفظ می‌شود.
+
+رویدادهای Coin در همان صف فیزیک‌اند؛ تا تیک بعد امتیازی ندارند. Failure ابتدا با
+fall>hazard>wall انتخاب و Coinهای pending رد می‌شوند؛ confirm اجرا نمی‌شود. فقط اگر
+شکست معتبر نیست، سکه‌ها با ترتیب پایدار coin_id به ScoreManager می‌روند و تنها پس
+از record_coin=true، confirm_pickup می‌شوند. Coin تأییدشده collected، pending=false،
+نمایش مخفی، monitoring و CollisionShape2D با set_deferred غیرفعال دارد. درخواست
+تکراری، منبع تغییرکرده یا تأییدنشده نمی‌تواند امتیاز دوباره ایجاد کند.
+
+ScoreManager Node فرزند مستقیم Level است و در World/Player یا Autoload نیست. صحنه
+جدید coin_score_prototype این فرزند را دارد؛ صحنه Failure قدیمی که Coin ندارد عمداً
+همان ساختار قبلی را حفظ کرده است. در نبود Manager برای World دارایCoin، شروع رد می‌شود.
+در Restart فقط World آزاد/تازه می‌شود؛ Manager باقی، reset_run یک بار پس از اتصال Coinها
+اجرا و score_changed(0,0) صادر می‌شود. start_run یا هر تیک امتیاز را reset نمی‌کند.
+
+امتیاز صحیح score = 10 * coins_collected آزمایشی است؛ record_coin جدید true، تکراریfalse،
+نامعتبرfalse با last_rejection و warning مشخص است. build_result snapshot مستقل با
+دقیقاً level_id:String، score:int، coins:int، completed:bool می‌دهد. true صرفاً آرگومان
+API است؛ Level هیچ وضعیت COMPLETED یا Finish اجرایی ندارد. Save/BestScore/wallet نداریم.
+Debug Label و کلیدR در اسکریپت جدا coin_score_prototype قرار دارند؛ Level منطق UI ندارد.

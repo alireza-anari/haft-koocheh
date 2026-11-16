@@ -1,0 +1,112 @@
+Mon Nov 16 07:00:03 UTC 2026
+Linux b7ce549d3b91 6.18.57 #1 SMP Tue Oct 20 21:56:04 UTC 2026 x86_64 GNU/Linux
+PRETTY_NAME="Debian GNU/Linux 13 (trixie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="13"
+VERSION="13 (trixie)"
+VERSION_CODENAME=trixie
+DEBIAN_VERSION_FULL=13.6
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           46 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  9
+On-line CPU(s) list:                     0-8
+Vendor ID:                               AuthenticAMD
+Model name:                              AMD EPYC 7763 64-Core Processor
+CPU family:                              25
+Model:                                   1
+Thread(s) per core:                      1
+Core(s) per socket:                      9
+Socket(s):                               1
+Stepping:                                1
+BogoMIPS:                                4890.86
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid extd_apicid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm cmp_legacy cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw topoext vmmcall fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves clzero xsaveerptr arat npt nrip_save tsc_scale vmcb_clean flushbyasid pausefilter pfthreshold v_vmsave_vmload umip vaes vpclmulqdq rdpid fsrm arch_capabilities
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               160 KiB (5 instances)
+L1i cache:                               160 KiB (5 instances)
+L2 cache:                                2.5 MiB (5 instances)
+L3 cache:                                32 MiB (1 instance)
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Ghostwrite:                Not affected
+Vulnerability Indirect target selection: Not affected
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Not affected
+Vulnerability Old microcode:             Not affected
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Not affected
+Vulnerability Spec rstack overflow:      Vulnerable
+Vulnerability Spec store bypass:         Vulnerable
+Vulnerability Spectre v1:                Vulnerable: __user pointer sanitization and usercopy barriers only; no swapgs barriers
+Vulnerability Spectre v2:                Vulnerable; STIBP: disabled; PBRSB-eIBRS: Not affected; BHI: Not affected
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Vulnerable
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+GPU
+
+DISPLAY MODES
+Screen 0: minimum 64 x 64, current 1364 x 1024, maximum 32767 x 32767
+DUMMY0 connected primary 1364x1024+0+0 0mm x 0mm
+   1364x1024_60.00  60.01*+
+   1280x1024     85.02    75.02    60.02  
+   1280x960      85.00    60.00  
+   1280x800      59.81  
+   1152x864      75.00  
+   1280x720      59.86  
+   1024x768      85.00    75.03    70.07    60.00  
+   1024x576      59.90  
+   832x624       74.55  
+   960x540       59.63  
+   800x600       85.14    72.19    75.00    60.32    56.25  
+   864x486       59.92  
+   640x480       85.01    75.00    72.81    59.94  
+   720x405       59.51  
+   720x400       85.04  
+   640x400       85.08  
+   640x360       59.84    59.32  
+   640x350       85.08  
+DUMMY1 disconnected
+DUMMY2 disconnected
+DUMMY3 disconnected
+DUMMY4 disconnected
+DUMMY5 disconnected
+DUMMY6 disconnected
+DUMMY7 disconnected
+DUMMY8 disconnected
+DUMMY9 disconnected
+DUMMY10 disconnected
+DUMMY11 disconnected
+DUMMY12 disconnected
+DUMMY13 disconnected
+DUMMY14 disconnected
+DUMMY15 disconnected
+
+COMPOSITOR
+Property "/general/use_compositing" does not exist on channel "xfwm4".
+COMMAND
+at-spi-bus-laun
+at-spi2-registr
+bash
+bwrap
+cloud-agent-des
+dbus-daemon
+ps
+sort
+xfce4-terminal
+xfconfd
+
+CPU QUOTA
+cat: /sys/fs/cgroup/cpu.max: No such file or directory
+
+ENGINE
+4.7.2.stable.official.ed1daf0bf

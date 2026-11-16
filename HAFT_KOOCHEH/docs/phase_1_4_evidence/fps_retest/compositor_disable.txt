@@ -1,0 +1,2 @@
+Property "/general/use_compositing" does not exist on channel "xfwm4". If a new property should be created, use the --create option.
+1

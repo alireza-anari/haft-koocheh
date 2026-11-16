@@ -1,0 +1,138 @@
+{
+  "mission": "Phase1.4 TEST-11 hardware host migration",
+  "status": "BLOCKED",
+  "baseline_files": 378,
+  "baseline_crc": "PASS",
+  "baseline_disk_index_manifest_zip_match": true,
+  "host_qualified": false,
+  "project_transferred": false,
+  "test11_started": false,
+  "new_runtime_capture": "NOT RUN; no new Godot runtime under unqualified host",
+  "test11_runs": [
+    {
+      "run": 1,
+      "status": "NOT RUN",
+      "exit_code": null,
+      "fps": null,
+      "ticks": null,
+      "coins": null,
+      "score": null
+    },
+    {
+      "run": 2,
+      "status": "NOT RUN",
+      "exit_code": null,
+      "fps": null,
+      "ticks": null,
+      "coins": null,
+      "score": null
+    },
+    {
+      "run": 3,
+      "status": "NOT RUN",
+      "exit_code": null,
+      "fps": null,
+      "ticks": null,
+      "coins": null,
+      "score": null
+    }
+  ],
+  "host": {
+    "os": "Debian GNU/Linux13.6 (trixie)",
+    "cpu": "AMD EPYC9V45 96-Core Processor;9logical CPUs/9cores visible",
+    "gpu": "No /dev/dri or /dev/nvidia* devices exposed; hardware acceleration NOT VERIFIED",
+    "gpu_driver": "NOT VERIFIED in current preflight; historical runtime used llvmpipe and remains historical only",
+    "godot": "4.7.2.stable.official.ed1daf0bf Standard, version command only",
+    "renderer_config": "Compatibility unchanged; new hardware runtime NOT RUN",
+    "display": "DUMMY0 virtual1364x1024 at60.01Hz; no physical display model or connector identified",
+    "connection": "Virtual DUMMY0; physical connector NOT VERIFIED",
+    "session": "X11 DISPLAY=:0; WAYLAND_DISPLAY empty",
+    "vsync": "Runtime state NOT VERIFIED; no runtime started and no setting changed",
+    "compositor": "Not identified in visible process list; xfwm4 property absent",
+    "fps_limit": "No runtime process launched; planned CLI cap120 per original test",
+    "remote_inventory": "Available DigitalOcean connector returned droplets=[]; no alternate existing host identified",
+    "settings_changes": []
+  },
+  "threshold": {
+    "graphical_required": true,
+    "actual_fps_expression": "absf(actual_fps - fps_target) <= fps_target * 0.1",
+    "target_fps": 120,
+    "accepted_mean_interval": [
+      108,
+      132
+    ],
+    "wall_seconds": [
+      9,
+      11
+    ],
+    "physics_hz": 60,
+    "physics_ticks": 600,
+    "coins": 3,
+    "score": 30,
+    "input": "30settle ticks; start_run; no Jump/Restart"
+  },
+  "historical_regression_evidence": {
+    "version": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/version_command.json",
+      "sha256": "7ca245938a3fcd97588d9774031ce17a38f753d25c0b6fbbff1327be433a5856"
+    },
+    "auto_run": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/auto_run_command.json",
+      "sha256": "0b6f140392dd60570297e089435eefd849bdfb91f2af579898aabb1f09ba8f68"
+    },
+    "jump": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/jump_command.json",
+      "sha256": "23cdf8759493913e7b47a65f9513bacf2eb2b67ab21e5b01a181579c069f49d6"
+    },
+    "failure_run_1": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/failure_run_1_command.json",
+      "sha256": "301e14b712c586d7f62edf3ad8ff4f3df52d1b4dc7a41f0a2d5908ddb8a83059"
+    },
+    "failure_run_2": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/failure_run_2_command.json",
+      "sha256": "4152ee40c6b7f73c946a7871a16d258161efcef4fb81b48fabc4ba922c97ec06"
+    },
+    "failure_run_3": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/failure_run_3_command.json",
+      "sha256": "ad287107ca2abb720d189df5adc1b41ae43ed522788a759a8f0251a126f76917"
+    },
+    "import": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/import_command.json",
+      "sha256": "889f03dd0fbdc326c52867149539a0d4a00172580997fb257ea9e840280ec01a"
+    },
+    "main": {
+      "historical_exit_code": 0,
+      "new_execution": "NOT RUN on new host; preflight BLOCKED",
+      "evidence": "docs/phase_1_4_evidence/main_command.json",
+      "sha256": "f554c7088c7689e6d48e4fd03e42053b4639fe6b8af195636b32cdf3e5d76491"
+    },
+    "static_validation": {
+      "historical_exit_code": 0,
+      "scope": "Historical phase1.4 check; not a fresh check of changed documentation",
+      "evidence": "docs/phase_1_4_evidence/static_validation.json",
+      "sha256": "585f8ef83d395fcb9345fb0b83ce64d013a3922d2630898c2467909c276034a0"
+    },
+    "documentation_validation": {
+      "historical_exit_code": 0,
+      "scope": "Historical phase1.4 check; not a fresh check of changed documentation",
+      "evidence": "docs/phase_1_4_evidence/documentation_validation.json",
+      "sha256": "143736b09a59c504bc1dcc85c1491ced4c47f5e7c822774fd0e67eb5b7dd948f"
+    }
+  },
+  "new_regressions": "NOT RUN on a new qualified host; no such host is available",
+  "next_requirement": "Provide execution access to a real desktop with hardware GPU acceleration and healthy driver, and >=120Hz display when the measurement path depends on refresh; use exact4.7.2Standard/Compatibility. No new billed instance or credential was created."
+}

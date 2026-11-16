@@ -1,0 +1,37 @@
+extends "res://tests/test_coin_score.gd"
+
+# Additive observation only; all TEST-11 input, physics and assertions are inherited unchanged.
+var _previous_frame_us: int = 0
+var _frame_intervals_us: Array[int] = []
+var _capture_result: bool = false
+
+func _initialize() -> void:
+	_capture_result = "--capture-result" in OS.get_cmdline_user_args()
+	super._initialize()
+
+func _process(delta: float) -> bool:
+	if measuring:
+		var now: int = Time.get_ticks_usec()
+		if _previous_frame_us > 0:
+			_frame_intervals_us.append(now - _previous_frame_us)
+		_previous_frame_us = now
+	else:
+		_previous_frame_us = 0
+	return super._process(delta)
+
+func _finish(extra: Dictionary = {}) -> void:
+	if not _frame_intervals_us.is_empty():
+		var minimum_us: int = _frame_intervals_us.min()
+		var maximum_us: int = _frame_intervals_us.max()
+		extra["observed_frame_intervals_us"] = _frame_intervals_us.duplicate()
+		extra["minimum_instantaneous_fps"] = 1000000.0 / maximum_us
+		extra["maximum_instantaneous_fps"] = 1000000.0 / minimum_us
+		extra["interval_sample_count"] = _frame_intervals_us.size()
+		extra["interval_definition"] = "Time.get_ticks_usec between consecutive measured _process callbacks; first partial interval excluded; base mean FPS remains unchanged"
+	print("FPS_TELEMETRY ", JSON.stringify({"mean_fps": extra.get("actual_fps"), "min_fps": extra.get("minimum_instantaneous_fps"), "max_fps": extra.get("maximum_instantaneous_fps"), "frames": frames, "ticks": tick, "score": score.score, "coins": score.coins_collected}))
+	if _capture_result:
+		paused = true
+		print("RESULT_CAPTURE_HOLD: 45wall seconds AFTER measurement; no physics advancement")
+		await create_timer(45.0, true, false, true).timeout
+		paused = false
+	await super._finish(extra)

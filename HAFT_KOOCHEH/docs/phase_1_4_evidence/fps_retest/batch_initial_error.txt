@@ -1,0 +1,1 @@
+bash -n final_native_batch.sh: exit2; missing closing quotes in lines4-6; no final test process started. Launcher corrected before rerun. No project or assertion change.

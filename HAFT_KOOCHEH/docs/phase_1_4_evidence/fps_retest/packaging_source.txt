@@ -1,0 +1,49 @@
+from pathlib import Path
+from zipfile import ZipFile,ZIP_DEFLATED
+import json,subprocess,hashlib,tempfile
+r=Path(__file__).resolve().parents[2];p=r/'HAFT_KOOCHEH';ev=p/'docs/phase_1_4_evidence/fps_retest';zpath=r/'HAFT_KOOCHEH_phase_1_4.zip'
+def sha(b):return hashlib.sha256(b).hexdigest()
+def dump(path,obj):path.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+def git(*args):return subprocess.check_output(['git',*args],cwd=p)
+def files(root):return sorted(x.relative_to(root).as_posix() for x in root.rglob('*') if x.is_file() and not {'.git','.godot','__pycache__'}.intersection(x.relative_to(root).parts))
+status=json.loads((ev/'retest_results.json').read_text())['status']
+with ZipFile(r/'tools/phase_1_4_fps_retest/baseline_phase_1_4_294.zip') as base:
+ old={n.removeprefix('HAFT_KOOCHEH/'):base.read(n) for n in base.namelist() if not n.endswith('/')}
+assert len(old)==294
+names=files(p);assert set(old).issubset(names)
+meta={'docs/phase_1_4_manifest.json','docs/git_validation_results.json'}
+for n,b in old.items():
+ if n not in meta:assert (p/n).read_bytes()==b,n
+new=set(names)-set(old)
+assert all(n=='docs/PHASE_1_4_FPS_RETEST_REPORT.md' or n.startswith('docs/phase_1_4_evidence/fps_retest/') for n in new),new
+report=p/'docs/PHASE_1_4_FPS_RETEST_REPORT.md'
+s=report.read_text();s+='\nتعداد واقعی فایل‌های بسته نهایی: '+str(len(names))+'؛ تمام۲۹۴مسیر نسخه پیشین حفظ شده‌اند.\n';report.write_text(s)
+dump(p/'docs/phase_1_4_manifest.json',{'stage':'1.4','revision':'TEST-11 FPS retest','retest_status':status,'file_count':len(names),'files':names,'note':'Path/count manifest; no recursive archive/self hash. Every delivered byte is separately verified against Index and ZIP.'})
+subprocess.run(['git','add','--all'],cwd=p,check=True)
+index=git('ls-files').decode().splitlines();assert index==names
+checks=[]
+for args in [('diff','--cached','--check'),('diff','--cached','--check','--','.',':(exclude)docs/qa001_evidence/*.txt',':(exclude)docs/phase_1_1_r1_evidence/*.txt',':(exclude)docs/phase_1_2_evidence/*.txt',':(exclude)docs/phase_1_3_evidence/*.txt',':(exclude)docs/phase_1_4_evidence/*.txt')]:
+ a=subprocess.run(['git',*args],cwd=p,capture_output=True,text=True);checks.append({'command':['git',*args],'exit_code':a.returncode,'stdout':a.stdout,'stderr':a.stderr})
+assert checks[1]['exit_code']==0,checks[1]
+assert git('remote','-v')==b''
+self_name='docs/git_validation_results.json'
+dump(p/self_name,{'stage':'1.4 FPS retest','packaging_status':'PASS','retest_status':status,'baseline_count':294,'baseline_paths_deleted':[],'changed_existing_files':sorted(meta),'index_file_count':len(names),'zip_file_count':len(names),'index_files':names,'new_files':sorted(new),'sha256_except_this_file':{n:sha((p/n).read_bytes()) for n in names if n!=self_name},'disk_index_manifest_zip_match':True,'crc':'PASS','extract_test':'PASS (all assertions in packaging runner)','commands':checks,'git':'local unborn HEAD, no commit/remote/push; all files staged; report restaged last','note':'This report verifies packaging only. Old retest failures are preserved. Own digest omitted to avoid self-reference; its bytes still compare against Index/ZIP.'})
+subprocess.run(['git','add',self_name],cwd=p,check=True)
+for n in names:assert git('show',':'+n)==(p/n).read_bytes(),n
+assert git('diff','--name-only')==b'' and git('ls-files','--others','--exclude-standard')==b''
+dirs=sorted(x.relative_to(p).as_posix() for x in p.rglob('*') if x.is_dir() and not {'.git','.godot','__pycache__'}.intersection(x.relative_to(p).parts))
+with ZipFile(zpath,'w',ZIP_DEFLATED) as z:
+ for d in dirs:z.writestr('HAFT_KOOCHEH/'+d+'/',b'')
+ for n in names:z.write(p/n,'HAFT_KOOCHEH/'+n)
+with ZipFile(zpath) as z:
+ assert z.testzip() is None
+ assert sorted(n.removeprefix('HAFT_KOOCHEH/') for n in z.namelist() if not n.endswith('/'))==names
+ for n in names:assert z.read('HAFT_KOOCHEH/'+n)==(p/n).read_bytes(),n
+ with tempfile.TemporaryDirectory(prefix='fps_retest_extract_',dir=r) as tmp:
+  z.extractall(tmp);ex=Path(tmp)/'HAFT_KOOCHEH';assert files(ex)==names
+  for n in names:assert (ex/n).read_bytes()==(p/n).read_bytes(),n
+  assert all((ex/d).is_dir() for d in dirs)
+  assert not (ex/'.git').exists() and not (ex/'.godot').exists()
+result={'command':['python3',str(Path(__file__).resolve())],'exit_code':0,'packaging_status':'PASS','retest_status':status,'file_count':len(names),'preserved_baseline_paths':294,'modified_source_scene_test_setting_files':[],'metadata_updated':sorted(meta),'zip_size_bytes':zpath.stat().st_size,'zip_sha256':sha(zpath.read_bytes()),'disk_index_manifest_zip_match':True,'crc':'PASS','extract_test':'PASS','raw_whitespace_exit':checks[0]['exit_code'],'scoped_whitespace_exit':checks[1]['exit_code']}
+dump(r/'HAFT_KOOCHEH_phase_1_4_FPS_RETEST_DELIVERY.json',result)
+print(json.dumps(result,ensure_ascii=False,indent=2))

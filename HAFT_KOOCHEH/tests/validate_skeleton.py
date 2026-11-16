@@ -24,9 +24,9 @@ scene_text = scene.read_text()
 assert '[gd_scene format=3]' in scene_text
 assert re.findall(r'type="([^"]+)"', scene_text) == ["Node2D", "CanvasLayer", "Label"]
 assert 'text = "HAFT KOOCHEH"' in scene_text
-allowed_scripts = {"scripts/player/player_controller.gd", "scripts/gameplay/prototype_run.gd", "tests/test_auto_run.gd", "tests/test_jump.gd", "scripts/gameplay/level_controller.gd", "scripts/obstacles/hazard.gd", "tests/test_failure_restart.gd"}
+allowed_scripts = {"scripts/player/player_controller.gd", "scripts/gameplay/prototype_run.gd", "tests/test_auto_run.gd", "tests/test_jump.gd", "scripts/gameplay/level_controller.gd", "scripts/obstacles/hazard.gd", "tests/test_failure_restart.gd", "scripts/gameplay/coin.gd", "scripts/gameplay/coin_score_prototype.gd", "scripts/systems/score_manager.gd", "tests/test_coin_score.gd"}
 assert {p.relative_to(root).as_posix() for p in root.rglob("*.gd")} == allowed_scripts, "Unexpected gameplay script"
-assert {p.relative_to(root).as_posix() for p in root.rglob("*.tscn")} == {"scenes/app/main.tscn", "scenes/player/player.tscn", "scenes/gameplay/prototype_run.tscn", "scenes/gameplay/failure_prototype.tscn", "scenes/gameplay/failure_world.tscn", "scenes/obstacles/hazard.tscn"}
+assert {p.relative_to(root).as_posix() for p in root.rglob("*.tscn")} == {"scenes/app/main.tscn", "scenes/player/player.tscn", "scenes/gameplay/prototype_run.tscn", "scenes/gameplay/failure_prototype.tscn", "scenes/gameplay/failure_world.tscn", "scenes/obstacles/hazard.tscn", "scenes/collectibles/coin.tscn", "scenes/gameplay/coin_score_prototype.tscn", "scenes/gameplay/coin_score_world.tscn"}
 assert "[autoload]" not in text
 player_text = (root / "scenes/player/player.tscn").read_text()
 assert 'type="CharacterBody2D"' in player_text and 'type="RectangleShape2D"' in player_text

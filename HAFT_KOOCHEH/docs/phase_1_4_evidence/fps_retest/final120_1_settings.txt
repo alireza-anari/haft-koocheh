@@ -1,0 +1,1 @@
+LP_NUM_THREADS=4; LIBGL_ALWAYS_SOFTWARE=1; compositor not identified; xfwm4 property absent; disable attempt failed and no setting changed; --disable-vsync; max-fps=120

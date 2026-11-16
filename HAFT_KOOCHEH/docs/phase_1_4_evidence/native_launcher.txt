@@ -1,0 +1,16 @@
+#!/bin/bash
+root=/workspace/scratch/9fd60dbdba5c
+engine="$root/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64"
+mode="$1"
+args=(--path "$root/HAFT_KOOCHEH" --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 --position 0,0 --max-fps 60 --script res://tests/test_coin_score.gd)
+if [ "$mode" = visual ]; then
+ args+=(-- --visual --output="$root/evidence_1_4/graphical_visual.json")
+else
+ args[${#args[@]}]=--max-fps
+ args+=("$mode" -- --fps-target="$mode" --output="$root/evidence_1_4/fps_$mode.json")
+fi
+printf '%q\n' "$engine" "${args[@]}" > "$root/evidence_1_4/native_command_$mode.txt"
+LIBGL_ALWAYS_SOFTWARE=1 "$engine" "${args[@]}" > "$root/evidence_1_4/native_$mode.txt" 2>&1
+result=$?
+printf '%s\n' "$result" > "$root/evidence_1_4/native_exit_$mode.txt"
+printf 'COIN %s exit %s\n' "$mode" "$result"
