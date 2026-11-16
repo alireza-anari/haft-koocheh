@@ -1,0 +1,12 @@
+# Phase1.4 implementation plan
+Approved design: upload/Pasted text(3).txt and existing Collectible/Score architecture.
+Baseline197files extracted, byte/Index/Manifest compared before changes.
+1. Write/run red missing-Coin/Score API smoke test.
+2. Coin Area2D pending/collected, exact Player/attempt filter, deferred confirmation, safe rejection.
+3. Pure ScoreManager Node data/reset/dedupe/snapshot, diagnostic invalid IDs.
+4. Extend Level event queue: failure before coin, weak sources, active registry IDs/world; stable ScoreManager is explicit child in Coin prototype only. Old Failure prototype must remain one World child to preserve untouched test_failure_restart assertions.
+5. Prototype and World3fixedcoins; test-only debug script/Label and R. No change to Player, hazards, old scenes or old3tests.
+6. New integration cases, actual physics contact, duplicates/invalid layout, stale identity, both callback orders + actual overlap; snapshots; twoCoin reset and10restartsx3processes.
+7. Real render30/60/120 with physics60 and same inputs; actual screenshots before/contact/collected/restart via test-only frame holds.
+8. Read-only review, regressions, docs/QA, stage, manifest, SHA/CRC/extraction and full ZIP.
+No Finish/COMPLETED, wallet/Save/BestScore, new stage content, plugin/autoload, engine change, commit/push or1.5.

@@ -1,0 +1,9 @@
+{
+  "test_parse_failure": "Duplicate local variable old_world in same GDScript function; renamed cycle-local reference, kept assertions.",
+  "observer_failure": "Signal emits1argument; binding2extra passed3 to2-argument observer. Replaced observer with correctly typed1argument lambda; no production change.",
+  "overlap_failure": "PackedScene.pack omitted internal instanced Hazard Collider override: diagnostic before32x32, after48x48, Coin32x32. Hazard contacted earlier.",
+  "overlap_fix": "Set identical32x32 collider on the live test fixture while setup paused, before any physics tick; assert actual shape equality and same engine_tick remains.",
+  "final_actual_overlap_frame": 479,
+  "final_failure_frame": 480,
+  "thresholds_or_assertions_removed": false
+}

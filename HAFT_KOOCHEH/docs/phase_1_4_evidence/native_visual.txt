@@ -1,0 +1,12 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+CAPTURE_PAUSE {"attempt":1,"coins":0,"collected":false,"pending":false,"score":0,"stage":"before_contact","tick":30,"wall_hold_seconds":35,"x":160.0}
+CAPTURE_PAUSE {"attempt":1,"coins":0,"collected":false,"pending":true,"score":0,"stage":"contact_pending","tick":69,"wall_hold_seconds":35,"x":341.999908447266}
+CAPTURE_PAUSE {"attempt":1,"coins":1,"collected":true,"pending":false,"score":10,"stage":"coin_collected","tick":70,"wall_hold_seconds":35,"x":346.666564941406}
+CAPTURE_PAUSE {"attempt":1,"coins":1,"collected":true,"pending":false,"score":10,"stage":"score_increased","tick":72,"wall_hold_seconds":35,"x":355.999877929688}
+CAPTURE_PAUSE {"attempt":2,"coins":0,"collected":false,"pending":false,"score":0,"stage":"restart_coins_restored","tick":102,"wall_hold_seconds":35,"x":160.0}
+COIN_CASE {"attempt":2,"case":"normal_duplicate_contact_and_visual","coins":0,"counts":{"pickup":1,"score_changed":3},"events":[{"attempt":1,"coins":0,"engine_tick":1,"event":"score_changed","id":"","score":0,"state":"READY","tick":0},{"attempt":1,"coins":0,"engine_tick":2176,"event":"pickup","id":"bazaar_01_coin_001","score":0,"state":"RUNNING","tick":68},{"attempt":1,"coins":1,"engine_tick":4276,"event":"score_changed","id":"","score":10,"state":"RUNNING","tick":69},{"attempt":2,"coins":0,"engine_tick":8478,"event":"score_changed","id":"","score":0,"state":"READY","tick":72}],"extra":{},"failures":[],"passed":true,"score":0}
+COIN_SUITE {"case_count":1,"passed":true,"physics_hz":60}

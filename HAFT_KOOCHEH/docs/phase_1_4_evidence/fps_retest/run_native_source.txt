@@ -1,0 +1,13 @@
+#!/bin/bash
+root=/workspace/scratch/9fd60dbdba5c
+id="$1"
+fps="$2"
+engine="$root/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64"
+args=(--path "$root/HAFT_KOOCHEH" --rendering-method gl_compatibility --rendering-driver opengl3 --disable-vsync --audio-driver Dummy --resolution 1280x720 --position 0,0 --max-fps "$fps" --script "$root/tools/phase_1_4_fps_retest/telemetry.gd" -- --fps-target="$fps" --output="$root/evidence_1_4_fps_retest/$id.json")
+if [ "$3" = capture ]; then args+=(--capture-result); fi
+printf '%q\n' "$engine" "${args[@]}" > "$root/evidence_1_4_fps_retest/${id}_command.txt"
+printf 'LP_NUM_THREADS=4; LIBGL_ALWAYS_SOFTWARE=1; compositor not identified; xfwm4 property absent; disable attempt failed and no setting changed; --disable-vsync; max-fps=%s\n' "$fps" > "$root/evidence_1_4_fps_retest/${id}_settings.txt"
+LP_NUM_THREADS=4 LIBGL_ALWAYS_SOFTWARE=1 "$engine" "${args[@]}" > "$root/evidence_1_4_fps_retest/${id}_runtime.txt" 2>&1
+result=$?
+printf '%s\n' "$result" > "$root/evidence_1_4_fps_retest/${id}_exit.txt"
+printf 'FPS RETEST %s exit %s\n' "$id" "$result"

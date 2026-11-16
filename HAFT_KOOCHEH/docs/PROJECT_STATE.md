@@ -1,28 +1,38 @@
-# Project State — HAFT KOOCHEH ۱.۳
+# وضعیت جاری — مأموریت انتقال میزبان TEST-11 مرحله ۱.۴
 
-وضعیت فنی COMPLETE؛ منتظر بررسی مدیر پروژه. مرحله۱.۴ آغاز نشده است.
-مبنا: HAFT_KOOCHEH_phase_1_2.zip، 140فایل، همه مسیرها حفظ شده‌اند.
+وضعیت مأموریت: **BLOCKED**؛ میزبان دارای GPU سخت‌افزاری در دسترس تأیید نشد.
+انتقال و TEST-11 جدید آغاز نشده‌اند. مرحله ۱.۴ هنوز پذیرفته نشده و مرحله ۱.۵ آغاز نشده است.
+مبنای واقعی این مأموریت بسته۳۷۸فایلی است؛ عدد۲۹۴ در بخش تاریخی زیر به نسخه پیش از
+افزودن شواهد Retest تعلق دارد و تعداد نسخه جاری نیست. تعداد تحویل جدید در Manifest ثبت می‌شود.
+تمام کدها، صحنه‌ها، تست‌ها، تنظیمات و پارامترهای فیزیک بایت‌به‌بایت حفظ می‌شوند.
+گزارش جاری: PHASE_1_4_FPS_RETEST_REPORT.md؛ شواهد: phase_1_4_evidence/host_migration/.
 
-- Godot4.7.2.stable.official.ed1daf0bf Standard؛ GDScript؛ Compatibility.
-- 1280×720، Landscape، canvas_items/keep، Physics60Hz؛ project.godot بدون تغییر بایتی.
-- Main عنوان، Player Scene، Prototype قبلی و هر دو تست قبلی دقیقاً حفظ شده‌اند.
-- Player همان CharacterBody2D، Collider32×48 و move_and_slide؛ حالت‌های DISABLED/RUNNING/DEAD.
-- حرکت280، گرانش1200، پرش-480، Coyote0.08 و Buffer0.10 بدون تغییر؛ DEAD روی همان نمونه برگشت ندارد.
-- blocked از نرمال واقعی سمت راست؛ out_of_bounds از global_y > kill_y؛ زمین و سقف امن‌اند.
-- Hazard/‌KillZone از Area2D با هویت دقیق Player و attempt فعال؛ Layer4/Mask2.
-- LevelController پایدار با READY/RUNNING/FAILED و priority=-100؛ صف frameقبلی، fall>hazard>wall، یک شکست.
-- failure_prototype.tscn مالک World ساخته‌شده از failure_world.tscn است؛ Restart کل World را تازه می‌سازد.
-- attempt_id افزایش می‌یابد؛ WeakRef نمونه قدیمی و رویداد دیررس را امن رد می‌کند.
-- Playerتازه ابتداDISABLED، سپس پس از استقرار زمین RUNNING؛ exit_to_menu Pause را پاک و Main را بارگذاری می‌کند.
-- سطح امن y600، kill_y1000 (400pxحاشیه)، بالایKillZone820؛ Fixtureها محتوای مرحله نهایی نیستند.
-- 17سناریوی شکست، سه فرایند مستقل PASS؛ هرکدام10Restart؛ حرکت قبلی و27پرش PASS.
-- Runtime گرافیکی واقعی با Mesa llvmpipe، دو اجرای17سناریویی PASS؛ چهار تصویر واقعی موجود.
-- QA-001B OPEN؛ QA-001C PASS تاریخی؛ QA-002 OPEN؛ QA-003 NOT RUN.
-- هیچ Coin/Finish/Score/Save/EnemyAI/Audio/PauseManager/منوی نهایی/AndroidExport ساخته نشده است.
-- P1-014 بخش Score Reset و سایر موارد خارج محدوده NOT RUN هستند.
-- Git محلی بدون Commit/Remote/Push؛ همه فایل‌های تحویل Stage می‌شوند؛ فهرست و بایت Disk/Index/Manifest/ZIP بررسی می‌شود.
+## سابقه کامل وضعیت پیش از این مأموریت
 
-فهرست و تعداد نهایی واقعی در phase_1_3_manifest.json و git_validation_results.json است.
-گزارش کامل: PHASE_1_3_REPORT.md. فقط بررسی مدیر و سپس دستور مرحله بعد مجاز است.
+# Project State — HAFT KOOCHEH ۱.۴
 
-تعداد نهایی فایل‌های این تحویل: 197؛ فهرست دقیق مطابق Manifest و Git Index است.
+وضعیت نهایی: INCOMPLETE. کد و تست‌های عملکرد Coin/Score موفق‌اند؛ تأیید رندرواقعی120FPS باقی است.
+مبنا HAFT_KOOCHEH_phase_1_3.zip،197فایل؛ تمام مسیرهای مبنا حفظ شده‌اند.
+
+- Godot4.7.2.stable.official.ed1daf0bf Standard، GDScript، Compatibility،1280×720،Landscape،Physics60Hz بدون تغییر.
+- Player، Hazard، Main Scene، تمام صحنه‌های قبلی و سه تست قبلی بایت‌به‌بایت حفظ شده‌اند.
+- Coin Area2D با Layer8/Mask2، IDثابت، هویتPlayer/attempt، pending، confirm/reject و Colliderdeferred.
+- ScoreManager Node فرزندLevel و پایدار درRestart؛ Scoreصحیح10×coins، IDتکراری/نامعتبررد، Snapshot مستقل4کلیدی.
+- Level داور Failure>Coin؛ سپسfall>hazard>wall؛ صف frameقبلی، RegistryWorld،WeakRef/instanceID/attempt در دریافت و مصرف.
+- Prototype جدید با سهCoin و Hazard و DebugLabel/R؛ محتوای نهاییBazaar یاHUD نهایی نیست.
+- World/Player/Coinها درRestart تازه، امتیاز0 و Coinها دوباره ظاهر؛ Managerبازسازی نمی‌شود.
+- 12سناریویCoin×3فرایند مستقل PASS؛ هرباردهRestart؛ Regression حرکت،27پرش و17شکست×3 PASS.
+- Runtime واقعی و5عکس1280×720 PASS؛ توقف35ثانیه‌ای فقط درHarness ثبت تصویر است.
+- FPS30/60 موفق؛ هدف120با نرخ‌های واقعی99.34/95.05/75.55/101.64 موفق نشد، اما هر اجراScore30/Coins3/600tick صحیح داشت.
+- TEST-11 در120FPS FAIL؛ نیاز به تکرار روی میزبان توانمندتر یا بررسی عملکرد محیط بدون تغییر فناوری/معیار.
+- P1-011 وP1-014 PASS؛ P1-012 فقطCoin/HazardزیرآزمونPASS وکلNOT RUN؛ P1-013/018/019/020 NOT RUN.
+- QA-001B OPEN، QA-001C PASSتاریخی، QA-002 OPEN، QA-003 NOT RUN.
+- بدونSave/کیف‌پول/BestScore/Unlock/Finish/COMPLETED/EnemyAI/Audio/PauseManager/AndroidExport.
+- Gitمحلی بدونCommit/Remote/Push؛ همه فایل‌های تحویلStage وDisk/Index/Manifest/ZIP تطبیق می‌شوند.
+
+گزارش PHASE_1_4_REPORT.md وManifest واقعی phase_1_4_manifest.json مرجع تحویل‌اند.
+مرحله۱.۵ آغاز نشده؛ پذیرش مرحله۱.۴ تا رفعTEST-11 در120FPS کامل نیست.
+
+تعداد نهایی فایل‌های تحویل: 294؛ تمام ۱۹۷ مسیر مبنا حفظ شده‌اند.
+
+تعداد فایل‌های بسته بازبینی این مأموریت: 392؛تمام۳۷۸مسیر مبنا حفظ شده‌اند. این بسته وضعیتBLOCKED است.

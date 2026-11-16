@@ -1,7 +1,7 @@
-# وضعیت جاری: HAFT KOOCHEH ۱.۳
+# وضعیت جاری: HAFT KOOCHEH ۱.۴
 
-Collision، Hazard، Failure و Restart به Prototype افزوده شده‌اند؛ QA-001B و QA-002 بازند.
-روش اجرای جاری در بخش «تحویل جاری: ۱.۳» پایین همین فایل است؛ بخش‌های پیشین تاریخچه‌اند.
+Coin و امتیاز هر تلاش به Prototype افزوده شده‌اند؛ QA-001B و QA-002 بازند.
+روش اجرای جاری در بخش «تحویل جاری: ۱.۴» پایین همین فایل است؛ بخش‌های پیشین تاریخچه‌اند.
 Main Scene پیش‌فرض همچنان عنوان است. بخش ۰.۲ زیر مرجع تاریخی پیش از گیم‌پلی است.
 
 # HAFT KOOCHEH — مرحله ۰.۲
@@ -170,3 +170,32 @@ start_run، restart_run و exit_to_menu است؛ Restart کل failure_world.tscn
 [گزارش۱.۳](docs/PHASE_1_3_REPORT.md)، [نتایج۱.۳](docs/phase_1_3_test_results.json)
 و [Project State](docs/PROJECT_STATE.md) مرجع جاری‌اند. تست‌های قبلی حرکت و پرش حفظ‌اند؛
 بخش‌های۱.۲ و پیش‌تر تاریخچه‌اند. QA-003 لمس دستگاه واقعی NOT RUN است؛ مرحله۱.۴ مجاز نیست.
+
+## تحویل جاری: ۱.۴
+
+با Godot4.7.2 Stable Standard از ریشه پروژه:
+
+```sh
+godot --path . --rendering-method gl_compatibility --rendering-driver opengl3 res://scenes/gameplay/coin_score_prototype.tscn
+godot --headless --path . --fixed-fps 240 --script res://tests/test_coin_score.gd -- --output=/tmp/coin_score.json
+godot --path . --rendering-method gl_compatibility --rendering-driver opengl3 --max-fps 30 --script res://tests/test_coin_score.gd -- --fps-target=30 --output=/tmp/coin_fps30.json
+python3 tests/validate_skeleton.py
+python3 tests/validate_documentation.py --baseline ../HAFT_KOOCHEH_phase_1_3.zip
+```
+
+Space/Touch پرش قبلی و R فقط Restart آزمایشی است. سهCoin با ID ثابت و امتیاز10هرکدام
+Placeholder مکانیک‌اند؛ محتوای نهایی بازار یاHUD نهایی نیستند. ScoreManager درRestart
+همان نمونه باقی و داده‌هاصفر می‌شوند. هیچ Save، کیف پول، رکورد یاFinish نداریم.
+برایFPS60/120، هر دو مقدار max-fps و fps-target را تغییر دهید؛ فیزیک60 باقی می‌ماند.
+تست جدید را سه بار مستقل اجرا کنید؛ هر بار12سناریو و دهRestart جمع‌آوری/Reset دارد.
+--visual پنج حالت واقعی را هرکدام35ثانیه برای ثبت تصویر متوقف می‌کند؛ توقف فقط در
+Harness است و در تستFPS استفاده نمی‌شود. Main پیش‌فرض همچنان عنوان اولیه است.
+
+[گزارش۱.۴](docs/PHASE_1_4_REPORT.md)، [نتایج۱.۴](docs/phase_1_4_test_results.json)
+و [Project State](docs/PROJECT_STATE.md) مرجع فعلی‌اند؛ بخش‌های قبل تاریخچه‌اند.
+مرحله۱.۵ نیازمند بررسی و مجوز جدید است. QAهای باز بدون تغییرند.
+
+
+وضعیت پذیرش۱.۴: INCOMPLETE؛ هدف واقعی120FPS روی میزبان فعلی تأیید نشده است.
+آزمون‌های مکانیک وRegression موفق‌اند؛ برای تکمیل پذیرش،TEST-11 باید روی میزبان
+مناسب دوباره اجرا شود. داده‌های نرخ واقعی و همه تلاش‌های ناموفق داخل بسته حفظ‌اند.

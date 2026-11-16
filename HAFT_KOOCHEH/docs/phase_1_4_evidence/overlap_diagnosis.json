@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+    "--headless",
+    "--path",
+    "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+    "--script",
+    "/workspace/scratch/9fd60dbdba5c/tools/phase_1_4/diagnose_overlap.gd"
+  ],
+  "exit_code": 0,
+  "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nBEFORE_PACK (32.0, 32.0)\nAFTER_PACK (48.0, 48.0) COIN (32.0, 32.0)\n",
+  "stderr": ""
+}

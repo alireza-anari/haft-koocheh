@@ -1,0 +1,61 @@
+{
+  "command": [
+    "python3",
+    "/workspace/scratch/9fd60dbdba5c/tools/phase_1_4_host_migration/check_documents.py"
+  ],
+  "exit_code": 0,
+  "baseline_paths_preserved": 378,
+  "core_files_byte_identical": [
+    "project.godot",
+    "scenes/app/main.tscn",
+    "scenes/collectibles/coin.tscn",
+    "scenes/gameplay/coin_score_prototype.tscn",
+    "scenes/gameplay/coin_score_world.tscn",
+    "scenes/gameplay/failure_prototype.tscn",
+    "scenes/gameplay/failure_world.tscn",
+    "scenes/gameplay/prototype_run.tscn",
+    "scenes/obstacles/hazard.tscn",
+    "scenes/player/player.tscn",
+    "scripts/gameplay/coin.gd",
+    "scripts/gameplay/coin.gd.uid",
+    "scripts/gameplay/coin_score_prototype.gd",
+    "scripts/gameplay/coin_score_prototype.gd.uid",
+    "scripts/gameplay/level_controller.gd",
+    "scripts/gameplay/level_controller.gd.uid",
+    "scripts/gameplay/prototype_run.gd",
+    "scripts/gameplay/prototype_run.gd.uid",
+    "scripts/obstacles/hazard.gd",
+    "scripts/obstacles/hazard.gd.uid",
+    "scripts/player/player_controller.gd",
+    "scripts/player/player_controller.gd.uid",
+    "scripts/systems/score_manager.gd",
+    "scripts/systems/score_manager.gd.uid",
+    "tests/test_auto_run.gd",
+    "tests/test_auto_run.gd.uid",
+    "tests/test_coin_score.gd",
+    "tests/test_coin_score.gd.uid",
+    "tests/test_failure_restart.gd",
+    "tests/test_failure_restart.gd.uid",
+    "tests/test_jump.gd",
+    "tests/test_jump.gd.uid",
+    "tests/validate_documentation.py",
+    "tests/validate_skeleton.py"
+  ],
+  "changed_docs_so_far": [
+    "docs/PHASE_1_4_FPS_RETEST_REPORT.md",
+    "docs/PHASE_1_4_REPORT.md",
+    "docs/PROJECT_STATE.md"
+  ],
+  "resolved_local_links": 58,
+  "documentation_scope": "Read-only link/source-preservation check; original documentation validator kept byte-identical; old scope allowlist not modified",
+  "static_validation": {
+    "command": [
+      "python3",
+      "tests/validate_skeleton.py"
+    ],
+    "exit_code": 0,
+    "stdout": "PASS: static configuration, main-scene references, module directories and required docs\nLIMIT: this check does not prove Godot parsing, runtime, rendering or Android export\n",
+    "stderr": ""
+  },
+  "new_runtime_tests": "NOT RUN per host precondition gate"
+}

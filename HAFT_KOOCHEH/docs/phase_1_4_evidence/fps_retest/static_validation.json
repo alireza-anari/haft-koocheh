@@ -1,0 +1,9 @@
+{
+  "command": [
+    "python3",
+    "tests/validate_skeleton.py"
+  ],
+  "exit_code": 0,
+  "stdout": "PASS: static configuration, main-scene references, module directories and required docs\nLIMIT: this check does not prove Godot parsing, runtime, rendering or Android export\n",
+  "stderr": ""
+}

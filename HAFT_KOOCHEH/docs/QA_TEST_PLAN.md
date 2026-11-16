@@ -344,3 +344,51 @@ P1-014 فقط بازسازی جهان/Player بررسی شده؛ Score Reset ت�
 و دلیل آن در evidence حفظ شده است؛ معیار صحت مختصات حذف یا ضعیف نشده است.
 برای عکس، تست گرافیکی پس از force_update_transform و force_update_scroll توقف
 40ثانیه‌ای دارد؛ این فقط ابزار ثبت شاهد است و هیچ Pause در Player/Prototype ایجاد نمی‌کند.
+
+# نتایج جاری مرحله۱.۴
+
+جدول‌های PLANNED پیشین تاریخچه‌اند. دستور۱.۴ مجوز Coin و Score هر تلاش است؛
+۱۲ سناریوی جدید در سه فرایند مستقل اجرا و موفق شدند؛ هر اجرا دهRestart دارد.
+
+| تست | پوشش | نتیجه |
+| --- | --- | --- |
+| TEST-01/02 | تماس واقعی، pending، رویداد تکراری، تأیید و Collider deferred | PASS |
+| TEST-03/04 | ثبت تکراری و چهار ID نامعتبر؛ diagnostic، بدون افزایش امتیاز/Signal | PASS |
+| TEST-05 | سه تماس واقعی، coins3 و score30 | PASS |
+| TEST-06 | Player/attempt قدیمی، World خارجی، منبع تغییرکرده، READY/FAILED | PASS |
+| TEST-07 | دو ترتیب Callback و هم‌پوشانی فیزیکی واقعی همانframe | PASS؛ Failure برنده، بدون confirm |
+| TEST-08 | Snapshot دقیق4کلید با completed=false/true و نوع‌های صحیح | PASS؛ چرخهCOMPLETED ساخته نشده |
+| TEST-09 | جمع‌آوری2سکه، World/Player/Coin تازه و score0 | PASS |
+| TEST-10 | دهRestart، ScoreManager ثابت و بدون انباشت Callback | PASS، سه فرایند مستقل |
+| TEST-11 | رندرواقعی30/60/120 بافیزیک60 و ورودی یکسان | نتیجه واقعی در گزارش و JSON۱.۴ |
+| TEST-12 | تصاویر واقعی قبل/تماس/حذف/افزایشScore/Restart | نتیجه نهایی در گزارش۱.۴ |
+| TEST-13 | test_auto_run قبلی بدون تغییر | PASS |
+| TEST-14 | تمام27سناریوی test_jump بدون تغییر | PASS |
+| TEST-15 | تمام17سناریوی test_failure_restart در سه فرایند مستقل | PASS |
+
+| شناسهQA فازیک | وضعیت جاری | دلیل/مرز |
+| --- | --- | --- |
+| P1-011 | PASS | تماس تکراری، coin_id تکراری، +10 یک‌باره و Collider امن آزمایش شد |
+| P1-014 | PASS | kill_y برابر و بیشتر، fallیک‌باره، Restart نمونه تازه و Score Reset، در case kill_y_score_reset_after_failure و Regression۱.۳ |
+| P1-012 | NOT RUN به صورت کامل | زیرآزمونCoin+Hazard موفق؛ Finish وجود ندارد |
+| P1-013 | NOT RUN | Finish ساخته نشده |
+| P1-018 | NOT RUN | رکورد/Unlock/Save خارج محدوده |
+| P1-019 | NOT RUN | Save خارج محدوده |
+| P1-020 | NOT RUN | چیدمان نهایی مراحل ساخته نشده |
+
+QA-001B OPEN؛ QA-001C PASS تاریخی؛ QA-002 OPEN؛ QA-003 NOT RUN بدون تغییرند.
+Score Reset هم از RUNNING و هم پس از FAILED/fall تست شده است. در تست ایزوله state
+فقط وضعیت Level موقتاً عوض می‌شود تا guard آن مستقل از guard Player بررسی شود؛
+این کار رفتار اجرایی محصول نیست. سناریوهای دو ترتیب Callback مستقیماً API واقعی
+Coin/Hazard را فراخوانی می‌کنند؛ یک سناریوی جدا تماس هم‌زمان از فیزیک واقعی است.
+
+تلاش‌های ناموفق در evidence۱.۴ حفظ‌اند: نام متغیر تکراری تست، آرگومان اضافی observer
+Signal، و ازدست‌رفتن override شکل داخلی هنگامPackedScene.pack. دو مورد اول فقط
+اسکریپت تست بودند؛ مورد سوم با مشاهده32×32 پیش ازpack و48×48 پس ازpack تشخیص داده
+و روی نمونه زنده قبل از تیک اول فیزیک اصلاح شد. assertion هم‌زمانی حفظ شده است.
+Warningهای ID نامعتبر/تکراری در تست منفی عمدی‌اند؛ Parse/RuntimeError در اجرای نهایی نیست.
+
+
+نتیجه قطعی TEST-11 مرحله۱.۴: 30/60 PASS؛ هدف120 FAIL (آخرین نرخ واقعی101.635969).
+با وجود Score30/Coin3 صحیح، این مورد رفع‌شده محسوب نمی‌شود و وضعیت مرحله INCOMPLETE است.
+TEST-12 PASS با پنج تصویر واقعی و Exit0؛ QAهای باز تغییری ندارند.

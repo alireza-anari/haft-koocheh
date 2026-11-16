@@ -1,0 +1,25 @@
+#!/bin/bash
+out=/workspace/scratch/9fd60dbdba5c/evidence_1_4_host_migration/desktop_preflight.txt
+{
+ date -u
+ cat /etc/os-release
+ uname -a
+ lscpu
+ printf '\nGPU DEVICE NODES\n'
+ ls -ld /dev/dri /dev/dri/render* /dev/nvidia* 2>&1
+ printf '\nGRAPHICS UTILITIES\n'
+ for tool in nvidia-smi lspci glxinfo; do command -v "$tool" || true; done
+ if command -v nvidia-smi >/dev/null; then nvidia-smi; fi
+ if command -v lspci >/dev/null; then lspci -nn; fi
+ if command -v glxinfo >/dev/null; then glxinfo -B; fi
+ printf '\nDISPLAY\n'
+ printf 'DISPLAY=%s\nWAYLAND_DISPLAY=%s\nXDG_SESSION_TYPE=%s\n' "$DISPLAY" "$WAYLAND_DISPLAY" "$XDG_SESSION_TYPE"
+ xrandr --current
+ printf '\nCOMPOSITOR\n'
+ xfconf-query -c xfwm4 -p /general/use_compositing
+ ps -eo comm | sort -u
+ printf '\nPINNED ENGINE VERSION ONLY (NO RUNTIME TEST)\n'
+ /workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --version
+ printf '\nTEST-11 NOT STARTED: hardware acceleration precondition must pass first.\n'
+} > "$out" 2>&1
+printf 'PREFLIGHT EVIDENCE SAVED; NO GAME TEST STARTED\n'

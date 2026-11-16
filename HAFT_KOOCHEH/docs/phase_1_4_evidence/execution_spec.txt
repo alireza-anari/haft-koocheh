@@ -1,0 +1,740 @@
+# HAFT KOOCHEH — دستور اجرایی مرحله ۱.۴
+
+## ۱. مشخصات مرحله
+
+**شماره:** ۱.۴
+
+**عنوان:** Coin Collection & Attempt Score System
+
+**فاز:** یک — توسعه هسته گیم‌پلی
+
+**وضعیت:** مجاز برای اجرا با تأیید مدیر پروژه
+
+**نسخه مبنا:** `HAFT_KOOCHEH_phase_1_3.zip`
+
+**تعداد فایل مبنا:** ۱۹۷
+
+**موتور:** Godot 4.7.2 Stable Standard
+
+هدف، پیاده‌سازی سیستم جمع‌آوری سکه و امتیاز هر تلاش، همراه با اتصال صحیح آن به LevelController و چرخه Restart است.
+
+## ۲. اسناد مرجع
+
+قبل از پیاده‌سازی، این اسناد را مطالعه کن:
+
+1. `docs/GAMEPLAY_ARCHITECTURE.md`
+2. `docs/LEVEL_DESIGN_SPEC.md`
+3. `docs/GDD.md`
+4. `docs/DECISIONS.md`
+5. `docs/QA_TEST_PLAN.md`
+6. `docs/PROJECT_STATE.md`
+
+تصمیم‌های مهم موجود:
+
+- DEC-018: اولویت Failure نسبت به Coin و Finish
+- DEC-022: فرمول آزمایشی امتیاز
+- R1-D03: آزمایشی بودن فرمول امتیاز
+- R1-D04: عدم وجود کیف پول تجمعی
+- DEC-037 تا DEC-039: معماری شکست، Attempt و Restart
+
+هیچ تصمیم قبلی را بدون مجوز مدیر پروژه تغییر نده.
+
+## ۳. وضعیت اولیه پروژه
+
+تمام ۱۹۷ فایل نسخه ۱.۳ باید حفظ شوند.
+
+قابلیت‌های تأییدشده:
+
+- حرکت خودکار
+- پرش ثابت
+- Space و Touch Event
+- Coyote Time
+- Jump Buffer
+- Double Jump Prevention
+- Collision
+- Hazard
+- Kill Y
+- DEAD
+- Failure Arbitration
+- Restart کامل World
+- Attempt ID
+- WeakRef برای رویدادهای تأخیری
+
+پارامترهای حرکت و پرش نباید تغییر کنند.
+
+تست‌های قبلی باید بدون تغییر Assertion حفظ شوند.
+
+## ۴. محدوده دقیق مرحله
+
+چهار بخش اصلی مجاز هستند:
+
+A. Coin System
+
+B. ScoreManager
+
+C. اتصال Coin و Score به LevelController
+
+D. Reset کامل Coin و Score در Restart
+
+این مرحله نباید به ساخت مرحله کامل Bazaar یا سیستم ذخیره‌سازی تبدیل شود.
+
+## ۵. وظیفه A — ساخت Coin
+
+فایل جدید:
+
+`scripts/gameplay/coin.gd`
+
+صحنه جدید:
+
+`scenes/collectibles/coin.tscn`
+
+### ساختار صحنه
+
+Root: `Area2D`
+
+فرزندان:
+
+- CollisionShape2D
+- Polygon2D
+
+نمایش Polygon2D صرفاً Placeholder است.
+
+از RigidBody2D استفاده نکن.
+
+### تنظیم Collision
+
+| مورد | مقدار |
+|---|---|
+| Collision Layer | 8 |
+| Collision Mask | 2 |
+| Monitoring | true |
+| Player Layer | 2 |
+
+تنظیمات باید با Collision Layers مرحله ۱.۳ سازگار باشند.
+
+### شناسه سکه
+
+هر سکه باید دارای:
+
+`coin_id: StringName`
+
+باشد.
+
+شرایط:
+
+- شناسه خالی ممنوع.
+- شناسه در هر Level یکتا باشد.
+- شناسه ثابت و مستقل از Instance ID باشد.
+- شناسه در Restart تغییر نکند.
+- شناسه تکراری در یک چیدمان خطای طراحی محسوب شود.
+
+نمونه شناسه آزمایشی:
+
+- `bazaar_01_coin_001`
+- `bazaar_01_coin_002`
+- `bazaar_01_coin_003`
+
+### Signal
+
+`pickup_requested(coin_id: StringName)`
+
+Coin فقط درخواست جمع‌آوری صادر می‌کند.
+
+Coin حق ندارد مستقیماً امتیاز را تغییر دهد.
+
+### رفتار جمع‌آوری
+
+هنگام `body_entered`:
+
+1. بررسی کن Body دقیقاً Player فعال همان تلاش باشد.
+2. بررسی کن Player در وضعیت RUNNING باشد.
+3. بررسی کن Coin قبلاً pending یا collected نشده باشد.
+4. درخواست pickup فقط یک بار صادر شود.
+5. Coin تا دریافت تصمیم Level در حالت pending بماند.
+
+### متد تأیید
+
+`confirm_pickup()`
+
+فقط پس از تأیید ScoreManager اجرا شود.
+
+رفتار:
+
+- علامت collected ثبت شود.
+- pending پاک شود.
+- monitoring خاموش شود.
+- CollisionShape2D به‌صورت deferred غیرفعال شود.
+- نمایش Coin حذف یا مخفی شود.
+
+تغییر Collider داخل flush فیزیک ممنوع است.
+
+برای رویداد تکراری یا coin_id تکراری، مسیر rejection امن داشته باش.
+
+## ۶. وظیفه B — ساخت ScoreManager
+
+فایل جدید:
+
+`scripts/systems/score_manager.gd`
+
+ScoreManager باید Node فرزند LevelController باشد.
+
+نباید Autoload شود.
+
+نباید زیر Player یا World قرار گیرد؛ چون در Restart جهان باید نمونه ScoreManager باقی بماند و فقط داده تلاش بازنشانی شود.
+
+### API الزامی
+
+`reset_run(level_id: StringName)`
+
+`record_coin(coin_id: StringName) -> bool`
+
+`build_result(completed: bool) -> Dictionary`
+
+### متغیرها
+
+- `level_id`
+- `coins_collected`
+- `score`
+- مجموعه شناسه‌های جمع‌آوری‌شده
+
+### فرمول امتیاز
+
+طبق DEC-022 و R1-D03:
+
+`score = 10 * coins_collected`
+
+هر سکه ۱۰ امتیاز آزمایشی دارد.
+
+این فرمول هنوز تصمیم نهایی اقتصادی محصول نیست.
+
+بدون تأیید مدیر پروژه آن را تغییر نده.
+
+### رفتار record_coin
+
+اگر coin_id جدید و معتبر باشد:
+
+- شناسه ثبت شود.
+- coins_collected یک واحد افزایش یابد.
+- score ده واحد افزایش یابد.
+- true برگردانده شود.
+- Signal تغییر امتیاز صادر شود.
+
+اگر coin_id قبلاً ثبت شده باشد:
+
+- امتیاز افزایش نیابد.
+- شمارنده تغییر نکند.
+- false برگردد.
+
+امتیاز منفی یا اعشاری وجود ندارد.
+
+### Signal
+
+`score_changed(score: int, coins: int)`
+
+پس از reset و پس از پذیرش سکه جدید صادر شود.
+
+### خروجی build_result
+
+Dictionary دقیقاً شامل:
+
+- `level_id`: String
+- `score`: int
+- `coins`: int
+- `completed`: bool
+
+باشد.
+
+ScoreManager نباید Player، UI، فایل ذخیره یا SaveManager را مدیریت کند.
+
+## ۷. وظیفه C — اتصال به LevelController
+
+فایل موجود:
+
+`scripts/gameplay/level_controller.gd`
+
+باید توسعه یابد.
+
+### مالکیت
+
+LevelController تنها مالک تصمیم پذیرش جمع‌آوری سکه است.
+
+Coin فقط درخواست می‌دهد.
+
+ScoreManager فقط وضعیت امتیاز را نگهداری می‌کند.
+
+LevelController:
+
+1. Coin را شناسایی می‌کند.
+2. هویت Player را بررسی می‌کند.
+3. Attempt ID را بررسی می‌کند.
+4. تعلق Coin به World فعال را بررسی می‌کند.
+5. وضعیت RUNNING را بررسی می‌کند.
+6. درخواست معتبر را صف‌بندی می‌کند.
+7. ScoreManager.record_coin را فراخوانی می‌کند.
+8. فقط در صورت پذیرش، confirm_pickup را اجرا می‌کند.
+
+### کنترل رویدادهای تأخیری
+
+مانند مرحله ۱.۳:
+
+- WeakRef حفظ شود.
+- Attempt ID حفظ شود.
+- Instance ID منبع بررسی شود.
+- رویداد World قبلی رد شود.
+- Coin نمونه قدیمی نباید روی تلاش تازه اثر بگذارد.
+
+### تقدم Failure و Coin
+
+این قانون قطعی است:
+
+**Failure > Coin**
+
+اگر در یک پنجره فیزیک، Coin و Hazard هم‌زمان فعال شوند:
+
+- Failure برنده است.
+- Score تغییر نمی‌کند.
+- confirm_pickup اجرا نمی‌شود.
+- وضعیت Player به DEAD می‌رود.
+- فقط یک run_failed صادر می‌شود.
+
+ترتیب Callbackها نباید نتیجه را تغییر دهد.
+
+از معماری صف و داوری تیک بعدی موجود استفاده کن.
+
+منطق فعلی fall > hazard > wall باید دقیقاً حفظ شود.
+
+### محدودیت وضعیت Level
+
+در این مرحله وضعیت‌های فعلی:
+
+- READY
+- RUNNING
+- FAILED
+
+حفظ شوند.
+
+ساخت سیستم واقعی Finish و COMPLETED در محدوده این مرحله نیست.
+
+## ۸. وظیفه D — اتصال به Restart
+
+فایل:
+
+`scripts/gameplay/level_controller.gd`
+
+ScoreManager باید در هر Restart بازنشانی شود.
+
+ترتیب:
+
+1. World قبلی متوقف شود.
+2. World قبلی آزاد شود.
+3. Attempt ID افزایش یابد.
+4. World تازه ساخته شود.
+5. Player تازه ساخته شود.
+6. Coinهای تازه Instance شوند.
+7. Coinها به Player و Attempt فعال متصل شوند.
+8. ScoreManager.reset_run فراخوانی شود.
+9. Score برابر صفر شود.
+10. coins_collected برابر صفر شود.
+11. Player پس از استقرار زمین RUNNING شود.
+
+تمام Coinهای جمع‌آوری‌شده باید در تلاش جدید دوباره قابل مشاهده باشند.
+
+بازنشانی صرفاً موقعیت Player کافی نیست.
+
+ScoreManager نباید در هر تیک یا هنگام start_run به‌صورت ناخواسته reset شود.
+
+## ۹. وظیفه E — Fixture آزمایشی
+
+از صحنه‌های Failure قبلی استفاده کن، اما تست‌های موجود را خراب نکن.
+
+صحنه مستقل:
+
+`scenes/gameplay/coin_score_prototype.tscn`
+
+جهان آزمایشی:
+
+`scenes/gameplay/coin_score_world.tscn`
+
+اجزا:
+
+- Player موجود
+- زمین امن
+- سه Coin آزمایشی با ID ثابت
+- Hazard آزمایشی برای تست برخورد هم‌زمان
+- Camera2D
+- LevelController
+- ScoreManager
+- نمایش Debug موقت Score
+
+این Fixture محتوای نهایی bazaar_01 نیست.
+
+سه سکه فقط برای آزمون مکانیک هستند؛ جدول ده‌مرحله‌ای و تعداد سکه‌های پیشنهادی GDD تغییر نمی‌کند.
+
+اگر برای آزمایش برخورد هم‌زمان لازم است، Fixture جداگانه بساز.
+
+Debug Label صرفاً متعلق به Prototype است و UI نهایی محسوب نمی‌شود.
+
+## ۱۰. وظیفه F — آزمون‌های الزامی
+
+فایل جدید:
+
+`tests/test_coin_score.gd`
+
+### TEST-01: جمع‌آوری عادی
+
+Player با یک Coin برخورد کند.
+
+انتظار:
+
+- یک pickup_requested
+- یک ثبت Score
+- coins_collected = 1
+- score = 10
+
+### TEST-02: تماس تکراری
+
+یک Coin چند بار body_entered دریافت کند.
+
+انتظار:
+
+- فقط یک بار ثبت شود.
+- فقط ۱۰ امتیاز اضافه شود.
+- Collider پس از تأیید غیرفعال شود.
+- خطای فیزیکی رخ ندهد.
+
+### TEST-03: coin_id تکراری
+
+یک شناسه چند بار به ScoreManager ارسال شود.
+
+انتظار:
+
+- اولین درخواست پذیرفته شود.
+- درخواست تکراری رد شود.
+- امتیاز افزایش مجدد نداشته باشد.
+
+### TEST-04: شناسه نامعتبر
+
+coin_id خالی یا نامعتبر ارسال شود.
+
+انتظار:
+
+- پذیرش نشود.
+- Score تغییر نکند.
+- خطای قابل تشخیص ثبت شود.
+
+### TEST-05: چند سکه متفاوت
+
+سه سکه متفاوت جمع‌آوری شوند.
+
+انتظار:
+
+- coins_collected = 3
+- score = 30
+
+### TEST-06: هویت و Attempt
+
+موارد زیر بررسی شوند:
+
+- Player قدیمی
+- Attempt قدیمی
+- Coin خارج از World فعال
+- Player غیرمجاز
+- وضعیت READY
+- وضعیت FAILED
+
+هیچ‌کدام نباید امتیاز جدید ایجاد کنند.
+
+### TEST-07: Failure هم‌زمان با Coin
+
+Coin و Hazard در یک پنجره فیزیک فعال شوند.
+
+آزمون با هر دو ترتیب Callback اجرا شود.
+
+انتظار:
+
+- فقط FAILED
+- صفر امتیاز جدید از Coin همان پنجره
+- بدون confirm_pickup
+- فقط یک run_failed
+
+این آزمون زیرمجموعه قرارداد P1-012 است؛ تا زمان پیاده‌سازی Finish، کل P1-012 بسته اعلام نشود.
+
+### TEST-08: Score Snapshot
+
+خروجی build_result بررسی شود.
+
+تمام کلیدها، نوع داده و مقدارها صحیح باشند.
+
+هر دو مقدار completed=false و completed=true در سطح API آزمایش شوند.
+
+این تست به معنی ساخت چرخه واقعی COMPLETED نیست.
+
+### TEST-09: Restart
+
+پس از جمع‌آوری دو سکه:
+
+- Restart انجام شود.
+- Score صفر شود.
+- coins_collected صفر شود.
+- Coinها دوباره ظاهر شوند.
+- Player و World تازه باشند.
+- Attempt ID افزایش یابد.
+
+### TEST-10: ده Restart متوالی
+
+ده بار جمع‌آوری، Restart و تلاش مجدد اجرا شود.
+
+انتظار:
+
+- بدون انباشت Signal
+- بدون Player قدیمی
+- بدون امتیاز انتقالی
+- بدون Coin گم‌شده
+- بدون خطای Resource
+- بدون چند World فعال
+
+در سه فرایند مستقل اجرا شود.
+
+### TEST-11: Score مستقل از FPS
+
+در نرخ‌های رندر ۳۰، ۶۰ و ۱۲۰ FPS:
+
+- فیزیک ۶۰ Hz حفظ شود.
+- یک مجموعه ورودی یکسان ارسال شود.
+- تعداد سکه و امتیاز نهایی یکسان باشند.
+- امتیاز به delta یا FPS وابسته نباشد.
+
+### TEST-12: اجرای گرافیکی واقعی
+
+Runtime واقعی اجرا شود.
+
+تصاویر واقعی زیر ثبت شوند:
+
+- Player و Coin پیش از برخورد
+- تماس واقعی با Coin
+- Coin پس از جمع‌آوری
+- افزایش امتیاز
+- وضعیت پس از Restart و بازگشت Coin
+
+تصاویر مصنوعی، Mockup یا خروجی شبیه‌سازی‌شده پذیرفته نیستند.
+
+### TEST-13: Regression حرکت
+
+`tests/test_auto_run.gd`
+
+بدون تغییر نتیجه PASS داشته باشد.
+
+### TEST-14: Regression پرش
+
+`tests/test_jump.gd`
+
+تمام ۲۷ سناریوی قبلی بدون تغییر Assertion موفق باشند.
+
+### TEST-15: Regression شکست و Restart
+
+`tests/test_failure_restart.gd`
+
+تمام ۱۷ سناریوی موجود و سه اجرای مستقل قبلی همچنان موفق باشند.
+
+هیچ تست قدیمی حذف یا ضعیف نشود.
+
+## ۱۱. تطبیق QA Test Plan
+
+پس از اجرای تست‌ها:
+
+- P1-011: در صورت تحقق کامل، PASS.
+- P1-014: بخش Score Reset به آزمون‌های قبلی Kill Y و Restart اضافه شود؛ فقط با موفقیت تمام معیارها PASS.
+- P1-012: زیرآزمون Coin + Hazard انجام شود؛ کل تست به دلیل نبود Finish NOT RUN باقی بماند.
+- P1-013: NOT RUN؛ Finish هنوز ساخته نشده است.
+- P1-018: NOT RUN؛ SaveManager و رکورد هنوز خارج محدوده‌اند.
+- P1-019: NOT RUN.
+- P1-020: چیدمان نهایی مرحله ساخته نشده؛ NOT RUN.
+
+نتایج تاریخی QA-001B، QA-001C، QA-002 و QA-003 نیز بدون شواهد جدید تغییر نکنند.
+
+## ۱۲. محدودیت‌های صریح
+
+در مرحله ۱.۴ موارد زیر ممنوع هستند:
+
+- کیف پول تجمعی سکه
+- Currency جدید
+- خرید و فروش
+- فروشگاه
+- SaveManager
+- ذخیره دائمی امتیاز
+- Best Score و رکورد مرحله
+- Unlock مرحله
+- Finish System واقعی
+- COMPLETED در LevelController
+- ساخت ده مرحله بازار
+- مأموریت و Collectible داستانی
+- Enemy AI
+- انیمیشن نهایی
+- HUD نهایی
+- منوی جدید
+- PauseManager
+- AudioManager
+- Android Export
+- تغییر موتور یا Renderer
+
+فرمول ۱۰ امتیاز برای هر سکه همچنان آزمایشی است.
+
+## ۱۳. فایل‌های مورد انتظار
+
+### فایل‌های جدید
+
+- `scripts/gameplay/coin.gd`
+- `scripts/systems/score_manager.gd`
+- `scenes/collectibles/coin.tscn`
+- `scenes/gameplay/coin_score_prototype.tscn`
+- `scenes/gameplay/coin_score_world.tscn`
+- `tests/test_coin_score.gd`
+
+در صورت ضرورت، Fixtureهای مستقل آزمایش برخورد هم‌زمان نیز اضافه شوند.
+
+### فایل‌های قابل اصلاح
+
+- `scripts/gameplay/level_controller.gd`
+- `docs/GAMEPLAY_ARCHITECTURE.md`
+- `docs/QA_TEST_PLAN.md`
+- `docs/DECISIONS.md`
+- `docs/PROJECT_STATE.md`
+- `README.md`
+- Validatorهای موجود
+
+### گزارش‌ها
+
+- `docs/PHASE_1_4_REPORT.md`
+- `docs/phase_1_4_test_results.json`
+- `docs/phase_1_4_manifest.json`
+- `docs/phase_1_4_evidence/`
+
+فایل‌های قبلی و گزارش‌های مراحل گذشته حفظ شوند.
+
+## ۱۴. Regression و کنترل کیفیت
+
+پس از پیاده‌سازی:
+
+1. Godot Version
+2. Project Import
+3. Main Scene Headless
+4. Static Validation
+5. Documentation Validation
+6. Test Auto Run
+7. Test Jump
+8. Test Failure/Restart
+9. Test Coin Collection
+10. Test Duplicate ID
+11. Test Failure/Coin Arbitration
+12. Test Score Reset
+13. Test Attempt Validation
+14. Graphical Runtime
+15. ZIP Integrity
+
+تمام فرمان‌ها، stdout، stderr، Exit Code و شواهد خام ثبت شوند.
+
+خطاهای اولیه و تلاش‌های ناموفق حذف نشوند.
+
+تغییر صوری آستانه یا حذف Assertion برای PASS کردن ممنوع است.
+
+## ۱۵. کنترل Git و بسته‌بندی
+
+نسخه مبنا:
+
+`HAFT_KOOCHEH_phase_1_3.zip`
+
+تمام ۱۹۷ مسیر قبلی باید حفظ شوند.
+
+الزامات:
+
+- بررسی بایتی نسخه مبنا
+- حفظ تمام مسیرهای قبلی
+- ثبت تمام فایل‌های جدید
+- Stage تمام فایل‌های نهایی
+- مقایسه Disk، Git Index، Manifest و ZIP
+- SHA-256
+- CRC
+- استخراج مستقل ZIP
+- اعتبارسنجی ساختار پس از استخراج
+
+تعداد نهایی بر اساس فایل‌های واقعی محاسبه شود؛ از قبل عددی فرض نکن.
+
+Commit، Remote و Push ممنوع است.
+
+نام ZIP:
+
+`HAFT_KOOCHEH_phase_1_4.zip`
+
+`.git`، Cache و فایل‌های موقت وارد بسته نشوند.
+
+## ۱۶. گزارش نهایی
+
+فایل:
+
+`docs/PHASE_1_4_REPORT.md`
+
+باید شامل موارد زیر باشد:
+
+1. وضعیت اولیه و ۱۹۷ فایل مبنا
+2. معماری Coin
+3. معماری ScoreManager
+4. قرارداد coin_id
+5. تنظیمات Collision
+6. نحوه اتصال به LevelController
+7. منطق Failure > Coin
+8. فرمول امتیاز و وضعیت آزمایشی آن
+9. نتایج TEST-01 تا TEST-15
+10. نتیجه P1-011 و P1-014
+11. وضعیت P1-012 و P1-013
+12. نتایج Restart
+13. مقایسه FPS
+14. Regression مراحل قبلی
+15. تصاویر Runtime واقعی
+16. خطاهای باقی‌مانده
+17. QAهای باز
+18. فایل‌های جدید و اصلاح‌شده
+19. وضعیت Git
+20. سلامت ZIP
+21. Project State جدید
+22. نتیجه نهایی
+
+نتیجه فقط یکی از این سه حالت باشد:
+
+- COMPLETE
+- INCOMPLETE
+- BLOCKED
+
+## ۱۷. تحویل نهایی
+
+دو خروجی الزامی:
+
+1. `HAFT_KOOCHEH_phase_1_4.zip`
+2. `docs/PHASE_1_4_REPORT.md`
+
+لینک مستقیم دانلود ZIP واقعی باید در پاسخ نهایی ارائه شود.
+
+صرفاً ارائه گزارش، اسکرین‌شات یا اعلام موفقیت کافی نیست.
+
+پس از تحویل، مرحله ۱.۵ آغاز نشود.
+
+**منتظر بررسی و تأیید مدیر پروژه بمان.**
+
+---
+
+# معیار پذیرش مدیر پروژه
+
+مرحله ۱.۴ فقط در صورت تحقق موارد زیر COMPLETE است:
+
+- جمع‌آوری سکه واقعی کار کند.
+- هر سکه فقط یک بار امتیاز بدهد.
+- شناسه تکراری امتیاز تکراری ایجاد نکند.
+- امتیاز فقط توسط ScoreManager مدیریت شود.
+- LevelController مالک تأیید جمع‌آوری باشد.
+- Failure در برخورد هم‌زمان بر Coin اولویت داشته باشد.
+- Restart تمام سکه‌ها و امتیاز را بازنشانی کند.
+- Attempt قدیمی نتواند امتیاز جدید تولید کند.
+- Regression سه مرحله قبلی موفق باشد.
+- Runtime گرافیکی واقعی تأیید شود.
+- بسته ZIP کامل و سالم تحویل شود.
+
+**پایان دستور اجرایی مرحله ۱.۴ — HAFT KOOCHEH**

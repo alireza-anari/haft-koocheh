@@ -97,3 +97,14 @@ DEC-033 وضعیت تاریخی آن مرحله است. این اصلاحیه م
 | DEC-037 | DEAD غیرقابل برگشت روی همان Player؛ blocked از نرمال جانبی واقعی و fall از global_y > kill_y | قطعی، دستور۱.۳ | جداسازی تشخیص فیزیک از داوری نهایی؛ برابری مرز امن است | freeze سرعت/Buffer/Coyote را صفر/پاک می‌کند؛ فقط نمونه تازه زنده است |
 | DEC-038 | Level پایدار با priority=-100 و رویدادهای physics frame قبلی؛ fall > hazard > wall | قطعی، دستور۱.۳ | استقلال از ترتیب Callback و جلوگیری از دو نتیجه | صف فقط هویت Player و attempt فعال را می‌پذیرد؛ Callback هیچ تعویض صحنه‌ای ندارد |
 | DEC-039 | World مستقل از failure_world.tscn در هر Restart تازه Instance می‌شود؛ referenceهای Callback به Player از WeakRef | انتخاب فنی در قرارداد Restart کامل | حفظ attempt شمارشی در Controller و جلوگیری از ارجاع به نمونه آزادشده | فایل World اضافی ضروری است؛ بدون Autoload؛ QA-001B و QA-002 باز و QA-003 NOT RUN |
+
+# مرحله۱.۴ — Coin و امتیاز تلاش
+
+مجوز دستور۱.۴ پس از پذیرش۱.۳ صادر شده؛ محدودیت تاریخی ورود۱.۴ در گزارش‌های قبلی
+تاریخچه است. فرمول و دامنه اقتصادی تغییر نکرده‌اند.
+
+| شناسه | تصمیم | وضعیت | دلیل فنی | اثر |
+| --- | --- | --- | --- | --- |
+| DEC-040 | Coin از Area2D Layer8/Mask2، pending تا تصمیم Level؛ confirm فقط پس از record_coin=true | قطعی، دستور۱.۴ | جلوگیری از امتیاز تکراری و تغییر Collider در flush | monitoring و Collider deferred غیرفعال؛ Failure همان پنجره Coin را رد می‌کند |
+| DEC-041 | ScoreManager فرزند مستقیم Level در Prototype سکه؛ همان نمونه در Restart می‌ماند و داده reset می‌شود | قطعی در مالکیت؛ ترکیب اختیاری در صحنه قدیمی | طول عمر امتیاز از World جدا؛ تست۱.۳ بدون تغییر ساختار/Assertion حفظ می‌شود | بدون Autoload/Save/کیف پول؛ score = 10 * coins_collected همچنان آزمایشی |
+| DEC-042 | coin_id ثابت، یکتا و snake_case با الگوی ASCII [a-z][a-z0-9_]*؛ Registry دقیق World/Instance و WeakRef/attempt | قرارداد فنی اعتبارسنجی | شناسه خالی/تکراری خطای چیدمان است و شروع Fixture را متوقف می‌کند | Level در READY با layout_error می‌ماند؛ Snapshot فقط چهار کلید؛ Finish/COMPLETED ساخته نمی‌شود |
