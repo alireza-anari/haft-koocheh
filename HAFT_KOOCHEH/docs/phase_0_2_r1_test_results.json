@@ -1,0 +1,429 @@
+{
+  "stage": "0.2-R1",
+  "date": "2026-11-15",
+  "baseline": "HAFT_KOOCHEH_phase_0_2.zip",
+  "baseline_sha256": "949b0a12e97da0fc421e2b8e9f9d8e4a8f14c96e144ab379a50db0e2347e6632",
+  "doc001": "PASS",
+  "qa001": "FAIL",
+  "qa001_closed": false,
+  "qa002": "OPEN / Android Export NOT RUN",
+  "results": [
+    {
+      "test": "Engine Version",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "test": "Static Validation",
+      "command": [
+        "python3",
+        "tests/validate_skeleton.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: static configuration, main-scene references, module directories and required docs\nLIMIT: this check does not prove Godot parsing, runtime, rendering or Android export\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "test": "Documentation Validation",
+      "command": [
+        "python3",
+        "tests/validate_documentation.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 5 core docs; 37 local Markdown links resolve\nLIMIT: 0 external Markdown links not HTTP-tested by this validator\nPASS: 10 shared level IDs/names; 5 movement values; scoring formula; decision IDs; 22 future tests marked NOT RUN and both QA gates open\nPASS: bootstrap is the only scene; no gameplay script, resource, art or export preset\nNOT RUN: baseline byte comparison (supply --baseline with the R1 ZIP)\nLIMIT: this is mechanical document/scope validation; semantic review, graphics, gameplay and Android are separate\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "test": "Project Import",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--quit"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Reopening scenes...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading central editor layout...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading plugin window layout...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Editor layout ready.\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "test": "Headless Runtime",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--quit-after",
+        "3"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "test": "DOC-001 and Current Baseline Scope Audit",
+      "passed": true,
+      "baseline_file_count": 26,
+      "regions": [
+        "بازار هزاررنگ",
+        "پشت‌بام‌های تهران",
+        "کویر اسرارآمیز",
+        "جنگل هزارجن",
+        "شهر سنگی",
+        "قله دماوند",
+        "شهر قصه‌ها"
+      ],
+      "ten_level_rows_unchanged": true,
+      "allowed_changed": [
+        "docs/DECISIONS.md",
+        "docs/GDD.md",
+        "docs/PHASE_0_2_REPORT.md",
+        "docs/PROJECT_STATE.md",
+        "docs/QA_TEST_PLAN.md",
+        "docs/git_validation_results.json"
+      ],
+      "actual_changed": [
+        "docs/DECISIONS.md",
+        "docs/GDD.md",
+        "docs/PHASE_0_2_REPORT.md",
+        "docs/PROJECT_STATE.md",
+        "docs/QA_TEST_PLAN.md"
+      ],
+      "method": "Byte comparison against 26-file phase 0.2 archive; region order and narrative assertions; exact GDD ten-level table row comparison; all unchanged core files byte-identical"
+    },
+    {
+      "test": "Graphical QA",
+      "status": "FAIL",
+      "qa001_closed": false,
+      "host": "Native Linux Desktop, DISPLAY=:0, DUMMY0 display, Mesa llvmpipe; not Xvfb/headless",
+      "reason": "Main Scene passes all three resolutions; graphical Editor has incomplete UI and VK_KHR_surface errors, so full QA-001 not accepted",
+      "executions": [
+        {
+          "mode": "1280x720",
+          "command_text": "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --max-fps 30 --quit-after 900 --path /workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 --position 100\\,100 \nDISPLAY=:0\nLIBGL_ALWAYS_SOFTWARE=1\n",
+          "exit_code": 0,
+          "errors": [],
+          "warnings": [
+            "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+          ],
+          "log_file": "qa001_evidence/runtime_1280x720.txt",
+          "visual_result": "PASS: full title, centered and correct aspect"
+        },
+        {
+          "mode": "1600x720",
+          "command_text": "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --max-fps 30 --quit-after 900 --path /workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --resolution 1600x720 --position 100\\,100 \nDISPLAY=:0\nLIBGL_ALWAYS_SOFTWARE=1\n",
+          "exit_code": 0,
+          "errors": [],
+          "warnings": [
+            "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+          ],
+          "log_file": "qa001_evidence/runtime_1600x720.txt",
+          "visual_result": "PASS: full title, centered and correct aspect"
+        },
+        {
+          "mode": "1024x768",
+          "command_text": "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --max-fps 30 --quit-after 900 --path /workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --resolution 1024x768 --position 100\\,100 \nDISPLAY=:0\nLIBGL_ALWAYS_SOFTWARE=1\n",
+          "exit_code": 0,
+          "errors": [],
+          "warnings": [
+            "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+          ],
+          "log_file": "qa001_evidence/runtime_1024x768.txt",
+          "visual_result": "PASS: full title, centered and correct aspect"
+        },
+        {
+          "mode": "editor",
+          "command_text": "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64 --max-fps 30 --quit-after 1800 --single-window --resolution 1280x800 --position 0\\,0 --editor --path /workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH res://scenes/app/main.tscn --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy \nDISPLAY=:0\nLIBGL_ALWAYS_SOFTWARE=1\n",
+          "exit_code": 0,
+          "errors": [
+            "ERROR: Required Vulkan instance extension VK_KHR_surface not found.",
+            "ERROR: Condition \"err != OK\" is true. Returning: err"
+          ],
+          "warnings": [
+            "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+          ],
+          "log_file": "qa001_evidence/runtime_editor.txt",
+          "visual_result": "FAIL: Editor UI incomplete; scene-tree visual inspection not verified"
+        }
+      ],
+      "image_measurements": [
+        {
+          "screenshot": "main_1280x720.jpg",
+          "size": [
+            1280,
+            720
+          ],
+          "content_rect_exclusive": [
+            0,
+            0,
+            1280,
+            720
+          ],
+          "title_ink_bbox_exclusive": [
+            460,
+            343,
+            819,
+            378
+          ],
+          "title_ink_center": [
+            639.5,
+            360.5
+          ],
+          "expected_center": [
+            640.0,
+            360.0
+          ],
+          "center_error_px": [
+            -0.5,
+            0.5
+          ],
+          "method": "Threshold analysis of original screenshots: min(R,G,B)>200 for title ink; max(R,G,B)>20 for content; manual visual inspection also performed"
+        },
+        {
+          "screenshot": "main_1600x720.jpg",
+          "size": [
+            1600,
+            720
+          ],
+          "content_rect_exclusive": [
+            160,
+            0,
+            1440,
+            720
+          ],
+          "title_ink_bbox_exclusive": [
+            620,
+            343,
+            979,
+            378
+          ],
+          "title_ink_center": [
+            799.5,
+            360.5
+          ],
+          "expected_center": [
+            800.0,
+            360.0
+          ],
+          "center_error_px": [
+            -0.5,
+            0.5
+          ],
+          "method": "Threshold analysis of original screenshots: min(R,G,B)>200 for title ink; max(R,G,B)>20 for content; manual visual inspection also performed"
+        },
+        {
+          "screenshot": "main_1024x768.jpg",
+          "size": [
+            1024,
+            768
+          ],
+          "content_rect_exclusive": [
+            0,
+            96,
+            1024,
+            672
+          ],
+          "title_ink_bbox_exclusive": [
+            368,
+            371,
+            656,
+            398
+          ],
+          "title_ink_center": [
+            512.0,
+            384.5
+          ],
+          "expected_center": [
+            512.0,
+            384.0
+          ],
+          "center_error_px": [
+            0.0,
+            0.5
+          ],
+          "method": "Threshold analysis of original screenshots: min(R,G,B)>200 for title ink; max(R,G,B)>20 for content; manual visual inspection also performed"
+        }
+      ],
+      "initial_editor_attempt_exit_code": null,
+      "initial_editor_attempt_note": "Interrupted manually; no observed native exit code captured. Original Vulkan errors retained.",
+      "image_capture": "Original JPEG bytes returned by native window capture; saved without resizing/reconstruction; wrong initial .png extensions renamed to .jpg; evidence excluded from Godot imports via .gdignore"
+    },
+    {
+      "test": "Final Documentation Validation",
+      "command": [
+        "python3",
+        "tests/validate_documentation.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 5 core docs; 43 local Markdown links resolve\nLIMIT: 0 external Markdown links not HTTP-tested by this validator\nPASS: 10 shared level IDs/names; 5 movement values; scoring formula; decision IDs; 22 future tests marked NOT RUN and both QA gates open\nPASS: bootstrap is the only scene; no gameplay script, resource, art or export preset\nNOT RUN: baseline byte comparison (supply --baseline with the R1 ZIP)\nLIMIT: this is mechanical document/scope validation; semantic review, graphics, gameplay and Android are separate\n",
+      "stderr": "",
+      "passed": true
+    }
+  ],
+  "evidence_manifest": [
+    {
+      "path": "docs/qa001_evidence/.gdignore",
+      "bytes": 75,
+      "sha256": "df24e4006cb40ff67ec19ee21ad0c696f7ce433201a50ed776e426a84b35be59"
+    },
+    {
+      "path": "docs/qa001_evidence/command_1024x768.txt",
+      "bytes": 327,
+      "sha256": "7572dc85f9ff64029afecd26b7ae3c792e2702d89cf8153fa5a8f7e24b6b81ce"
+    },
+    {
+      "path": "docs/qa001_evidence/command_1280x720.txt",
+      "bytes": 327,
+      "sha256": "c53a1134585b1cf4d7dd9bb680f938578b424b1c1064b09086dc761f931f8bf9"
+    },
+    {
+      "path": "docs/qa001_evidence/command_1600x720.txt",
+      "bytes": 327,
+      "sha256": "6cba0fb2f890d61b7c47799559d34655cb5a418ca9e9d5919e134b91dd463ba0"
+    },
+    {
+      "path": "docs/qa001_evidence/command_editor.txt",
+      "bytes": 376,
+      "sha256": "9b9a2b02de49d1eab6a5a8bacadca098e0e454d82259b52fb04c7ace0ebdf5cb"
+    },
+    {
+      "path": "docs/qa001_evidence/command_editor_cached_attempt.txt",
+      "bytes": 349,
+      "sha256": "9cf0240d928efd4586ae587c8f72d6610048234ebee89426d573482022c2f347"
+    },
+    {
+      "path": "docs/qa001_evidence/command_editor_import_error_attempt.txt",
+      "bytes": 295,
+      "sha256": "f9c92cf871e02fb3246ac4d81a2723e855175dedbeaae79dd6b60c2372efdf51"
+    },
+    {
+      "path": "docs/qa001_evidence/command_editor_initial.txt",
+      "bytes": 237,
+      "sha256": "c22bc32c2490b5ecbfc7f032f7ec5a315bf19a8822306fc1f4a5c538bac1914a"
+    },
+    {
+      "path": "docs/qa001_evidence/desktop_environment.txt",
+      "bytes": 1413,
+      "sha256": "7f66d7d06634d2076d60b409fa705b7e2b93063278e2ea42c02237e9b1499512"
+    },
+    {
+      "path": "docs/qa001_evidence/desktop_test_mode.txt",
+      "bytes": 1029,
+      "sha256": "392d41550093b609e4e825abf85141a41e835ffe026d268e1ef9d0b822cd8a6d"
+    },
+    {
+      "path": "docs/qa001_evidence/editor_clean_cache.jpg",
+      "bytes": 86135,
+      "sha256": "15934e3a496ca92227f2320f460b06d6bc25507fe67efb6f2fadaade56a6d137"
+    },
+    {
+      "path": "docs/qa001_evidence/exit_1024x768.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/qa001_evidence/exit_1280x720.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/qa001_evidence/exit_1600x720.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/qa001_evidence/exit_editor.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/qa001_evidence/exit_editor_cached_attempt.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/qa001_evidence/exit_editor_import_error_attempt.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/qa001_evidence/image_measurements.json",
+      "bytes": 1745,
+      "sha256": "c0f3af8a1015369ee0a74e3b09f7e715239e2692edf30126d8a2ae2060b1016e"
+    },
+    {
+      "path": "docs/qa001_evidence/main_1024x768.jpg",
+      "bytes": 24996,
+      "sha256": "b4af5d5bbd5ed1b0c471b28c56fdb19cf5fbc3c0246adeee5d486c7e191668fa"
+    },
+    {
+      "path": "docs/qa001_evidence/main_1280x720.jpg",
+      "bytes": 30665,
+      "sha256": "2216fcd4c3b4e85421ec80d5d276e6cfb8c7981bc6fc31858d2eb2af775c5da6"
+    },
+    {
+      "path": "docs/qa001_evidence/main_1600x720.jpg",
+      "bytes": 37191,
+      "sha256": "3bfac0023fe2927525c1a3efef374625667841925938d77fef45aea307ece3b7"
+    },
+    {
+      "path": "docs/qa001_evidence/runtime_1024x768.txt",
+      "bytes": 368,
+      "sha256": "052211730d2e6bad1bb27d0ba1621ed54bb0ef792b898c4c8600ed8b3be20a67"
+    },
+    {
+      "path": "docs/qa001_evidence/runtime_1280x720.txt",
+      "bytes": 368,
+      "sha256": "052211730d2e6bad1bb27d0ba1621ed54bb0ef792b898c4c8600ed8b3be20a67"
+    },
+    {
+      "path": "docs/qa001_evidence/runtime_1600x720.txt",
+      "bytes": 368,
+      "sha256": "052211730d2e6bad1bb27d0ba1621ed54bb0ef792b898c4c8600ed8b3be20a67"
+    },
+    {
+      "path": "docs/qa001_evidence/runtime_editor.txt",
+      "bytes": 660,
+      "sha256": "e1361701bc76a53315e38a70e5f2ac8f1d4c0baae1fb8ec2f2b9855c08bce941"
+    },
+    {
+      "path": "docs/qa001_evidence/runtime_editor_cached_attempt.txt",
+      "bytes": 660,
+      "sha256": "e1361701bc76a53315e38a70e5f2ac8f1d4c0baae1fb8ec2f2b9855c08bce941"
+    },
+    {
+      "path": "docs/qa001_evidence/runtime_editor_import_error_attempt.txt",
+      "bytes": 2079,
+      "sha256": "a7cd0d098ee1c191c2cabed9026830658244bb167ca66550788a7c853d563edb"
+    },
+    {
+      "path": "docs/qa001_evidence/runtime_editor_initial.txt",
+      "bytes": 660,
+      "sha256": "e1361701bc76a53315e38a70e5f2ac8f1d4c0baae1fb8ec2f2b9855c08bce941"
+    }
+  ],
+  "limits": [
+    "No gameplay implemented or tested",
+    "No Android export",
+    "Document validator executed unchanged without obsolete 18-file baseline option; current 26-file baseline audited independently"
+  ],
+  "integrity": {
+    "status": "PASS",
+    "indexed_file_count": 56,
+    "method": "git ls-files names and git show :path bytes compared to disk and ZIP; ZipFile.testzip(); replayed after report staging",
+    "baseline_files_preserved": 26,
+    "new_evidence_files": 28,
+    "new_report_files": 2
+  }
+}

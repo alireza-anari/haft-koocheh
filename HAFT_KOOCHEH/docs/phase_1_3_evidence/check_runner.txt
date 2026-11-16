@@ -1,0 +1,11 @@
+from pathlib import Path
+import json,subprocess
+r=Path(__file__).resolve().parents[2];e=r/'evidence_1_3';p=r/'HAFT_KOOCHEH';engine=str(r/'tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64')
+def run(name,args):
+ cmd=[engine,*args];a=subprocess.run(cmd,cwd=p,text=True,capture_output=True,timeout=100);(e/(name+'_command.json')).write_text(json.dumps(dict(command=cmd,cwd=str(p),exit_code=a.returncode,stdout=a.stdout,stderr=a.stderr),indent=2));print(name,a.returncode,a.stdout[-160:],a.stderr,flush=True)
+run('version',['--version'])
+for n in range(1,4):run('failure_run_'+str(n),['--headless','--path',str(p),'--fixed-fps','240','--script','res://tests/test_failure_restart.gd','--','--output='+str(e/f'failure_run_{n}.json')])
+run('auto_run',['--headless','--path',str(p),'--fixed-fps','240','--script','res://tests/test_auto_run.gd','--','--output='+str(e/'auto_run.json')])
+run('jump',['--headless','--path',str(p),'--fixed-fps','240','--script','res://tests/test_jump.gd','--','--output='+str(e/'jump.json')])
+run('import',['--headless','--editor','--path',str(p),'--quit'])
+run('main',['--headless','--path',str(p),'--quit-after','3'])

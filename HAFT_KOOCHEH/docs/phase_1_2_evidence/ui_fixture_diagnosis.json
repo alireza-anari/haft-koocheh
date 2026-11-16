@@ -1,0 +1,25 @@
+{
+  "initial_failure": "ui_touch generated a jump but UI consumed_count was zero",
+  "isolated_failure_reproduced": true,
+  "diagnostic_observed_touch_position": [
+    1600,
+    1320
+  ],
+  "intended_viewport_position": [
+    80,
+    80
+  ],
+  "control_rect": [
+    0,
+    0,
+    220,
+    140
+  ],
+  "root_cause": "Injected input positions were in window pixels before viewport stretch; logical coordinates had been supplied directly in headless mode.",
+  "fix": "root.get_final_transform() * logical_position before Input.parse_input_event",
+  "ui_assertions_preserved": [
+    "UI actually consumes >0 events via _gui_input/accept_event",
+    "Jump count remains zero"
+  ],
+  "extra_case": "UI primary touch plus second finger outside UI must not jump"
+}

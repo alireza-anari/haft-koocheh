@@ -1,0 +1,53 @@
+[
+  {
+    "command": [
+      "java",
+      "-version"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "openjdk version \"21.0.13\" 2026-10-20\nOpenJDK Runtime Environment (build 21.0.13+9-1-deb13u2-Debian)\nOpenJDK 64-Bit Server VM (build 21.0.13+9-1-deb13u2-Debian, mixed mode, sharing)\n"
+  },
+  {
+    "command": [
+      "javac",
+      "-version"
+    ],
+    "status": "executable_not_found"
+  },
+  {
+    "command": [
+      "sdkmanager",
+      "--version"
+    ],
+    "status": "executable_not_found"
+  },
+  {
+    "command": [
+      "adb",
+      "version"
+    ],
+    "status": "executable_not_found"
+  },
+  {
+    "command": [
+      "cmake",
+      "--version"
+    ],
+    "status": "executable_not_found"
+  },
+  {
+    "command": [
+      "git",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "git version 2.52.0\n",
+    "stderr": ""
+  },
+  {
+    "engine_path": "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+    "sha256": "8d106cbe6144c2dc7e881d61d2429c1a8a76e6b22ef48bd5e48dcf934953f71e",
+    "system": "Linux-6.18.57-x86_64-with-glibc2.41"
+  }
+]

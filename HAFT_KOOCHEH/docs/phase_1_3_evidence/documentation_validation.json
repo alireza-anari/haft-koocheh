@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python3",
+    "tests/validate_documentation.py",
+    "--baseline",
+    "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH_phase_1_2.zip"
+  ],
+  "cwd": "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+  "exit_code": 0,
+  "stdout": "PASS: 5 core docs; 55 local Markdown links resolve\nLIMIT: 0 external Markdown links not HTTP-tested by this validator\nPASS: 10 shared level IDs/names; 5 movement values; scoring formula; decision IDs; 22 historical planned cases retained; QA-001B and QA-002 remain open\nPASS: only approved movement/failure scripts/scenes; no external asset, system manager or export preset\nPASS: 140-file baseline preserved; only permitted failure/docs/report/test changes; original decisions and historical QA retained\nLIMIT: this is mechanical document/scope validation; semantic review, graphics, gameplay and Android are separate\n",
+  "stderr": ""
+}

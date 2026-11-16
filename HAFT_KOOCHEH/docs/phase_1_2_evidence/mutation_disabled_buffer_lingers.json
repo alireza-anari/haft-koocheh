@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+    "--headless",
+    "--path",
+    "/workspace/scratch/9fd60dbdba5c/tools/phase_1_2/mutations/disabled_buffer_lingers",
+    "--fixed-fps",
+    "240",
+    "--script",
+    "res://tests/test_jump.gd",
+    "--",
+    "--case=buffer_disable_latch",
+    "--output=/workspace/scratch/9fd60dbdba5c/evidence_1_2/mutation_disabled_buffer_lingers_result.json"
+  ],
+  "exit_code": 1,
+  "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nCASE_RESULT {\"apex_height_px\":0.0,\"arm_tick\":0,\"case\":\"drop_calibration\",\"case_ticks\":27,\"drop_calibration_ticks\":27,\"dx\":126.000030517578,\"failures\":[],\"flight_seconds\":null,\"flight_ticks_including_launch\":-1,\"fps_target\":0.0,\"jumps\":[],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":true,\"render_frames\":0,\"requests\":[],\"simulation_seconds\":0.45,\"ui_consumed\":0,\"wall_seconds\":0.028445}\nCASE_RESULT {\"apex_height_px\":100.000793457031,\"arm_tick\":0,\"case\":\"buffer_disable_latch\",\"case_ticks\":147,\"drop_calibration_ticks\":27,\"dx\":686.00146484375,\"failures\":[\"jump count 1 expected 0\"],\"flight_seconds\":0.833333333333333,\"flight_ticks_including_launch\":50,\"fps_target\":0.0,\"jumps\":[{\"tick\":28,\"vy\":-480.0,\"y\":599.925109863281}],\"landings\":[{\"tick\":27,\"vy\":0.0,\"y\":599.925109863281},{\"tick\":77,\"vy\":0.0,\"y\":599.925170898438}],\"leave_tick\":-1,\"measured_fps\":null,\"passed\":false,\"render_frames\":0,\"requests\":[{\"source\":\"request_jump\",\"tick\":22}],\"simulation_seconds\":2.45,\"ui_consumed\":0,\"wall_seconds\":0.147539}\nJUMP_SUITE {\"case_count\":2,\"passed\":false,\"physics_hz\":60}\n",
+  "stderr": ""
+}

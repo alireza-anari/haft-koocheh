@@ -1,0 +1,42 @@
+{
+  "baseline": "HAFT_KOOCHEH_phase_1_1_R1.zip",
+  "file_count": 90,
+  "bytes_and_index_match": true,
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "tests/validate_skeleton.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: static configuration, main-scene references, module directories and required docs\nLIMIT: this check does not prove Godot parsing, runtime, rendering or Android export\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "tests/validate_documentation.py",
+        "--baseline",
+        "../HAFT_KOOCHEH_phase_0_2_R1.zip"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 5 core docs; 49 local Markdown links resolve\nLIMIT: 0 external Markdown links not HTTP-tested by this validator\nPASS: 10 shared level IDs/names; 5 movement values; scoring formula; decision IDs; 22 historical planned cases retained; QA-001B and QA-002 remain open\nPASS: only approved auto-run scripts/scenes; no external asset, system manager or export preset\nPASS: 56-file baseline preserved; only permitted auto-run/docs/report/test changes; original decisions and historical QA retained\nLIMIT: this is mechanical document/scope validation; semantic review, graphics, gameplay and Android are separate\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://tests/test_auto_run.gd"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nPOSITION_SAMPLE {\"simulation_seconds\":1.0,\"tick\":60,\"vx\":280.0,\"x\":439.999694824219,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":2.0,\"tick\":120,\"vx\":280.0,\"x\":720.000427246094,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":2.99999999999999,\"tick\":180,\"vx\":280.0,\"x\":1000.00164794922,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":3.99999999999999,\"tick\":240,\"vx\":280.0,\"x\":1279.99951171875,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":4.99999999999999,\"tick\":300,\"vx\":280.0,\"x\":1559.9970703125,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":5.99999999999998,\"tick\":360,\"vx\":280.0,\"x\":1839.99462890625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":6.99999999999998,\"tick\":420,\"vx\":280.0,\"x\":2119.994140625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":7.99999999999998,\"tick\":480,\"vx\":280.0,\"x\":2399.9990234375,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":9.00000000000003,\"tick\":540,\"vx\":280.0,\"x\":2680.00390625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":10.0000000000001,\"tick\":600,\"vx\":280.0,\"x\":2960.0087890625,\"y\":599.981750488281}\nTEST_RESULT {\"displacement_error_px\":0.00878906247862687,\"displacement_px\":2800.0087890625,\"end_position\":[2960.0087890625,599.981750488281],\"expected_from_actual_ticks_px\":2800.00000000002,\"floor_contact_ticks\":600,\"fps_status\":\"NOT RUN\",\"fps_target\":0.0,\"graphical\":false,\"ground_pass\":true,\"ground_y_range\":[599.981750488281,599.981750488281],\"horizontal_speed_range\":[280.0,280.0],\"max_vertical_speed\":0.0,\"measured_average_fps\":null,\"movement_pass\":true,\"passed\":true,\"physics_hz\":60,\"physics_ticks\":600,\"rendered_frames\":600,\"simulation_seconds\":10.0000000000001,\"start_position\":[160.0,599.981750488281],\"stop_displacement_px\":0.0,\"stop_pass\":true,\"stop_ticks\":60,\"stopped_vx\":0.0,\"wall_seconds\":0.429154}\n",
+      "stderr": ""
+    }
+  ]
+}

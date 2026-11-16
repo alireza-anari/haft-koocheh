@@ -1,0 +1,6 @@
+{
+  "first_failure": "fresh start assertion in wall_freeze_late_input",
+  "cause": "Await process_frame can occur after the first physics step, so gravity already changes y. Other case setups happened between ticks.",
+  "fix": "Pause fixture setup before instantiate, assert exact Start and DISABLED, then resume physics. No production physics change or assertion relaxation.",
+  "capture_fix": "Before test-only capture pause flush Node2D transforms and follow-camera scroll to show current physical frame; screenshots remain actual untouched window captures."
+}

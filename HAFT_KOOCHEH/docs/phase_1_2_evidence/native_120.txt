@@ -1,0 +1,7 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:372)
+OpenGL API 4.5 (Core Profile) Mesa 25.0.7-2+deb13u1 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 19.1.7, 256 bits)
+
+CASE_RESULT {"apex_height_px":100.042358398438,"arm_tick":30,"case":"fps","case_ticks":630,"drop_calibration_ticks":0,"dx":2800.03344726562,"failures":[],"flight_seconds":0.833333333333333,"flight_ticks_including_launch":50,"fps_target":120.0,"jumps":[{"tick":91,"vy":-480.0,"y":599.981750488281}],"landings":[{"tick":17,"vy":0.0,"y":599.981750488281},{"tick":140,"vy":0.0,"y":599.925170898438}],"leave_tick":-1,"measured_fps":119.870759709456,"passed":true,"render_frames":1198,"requests":[{"echo":false,"pressed":true,"source":"Space","tick":90},{"echo":false,"pressed":false,"source":"Space","tick":91}],"simulation_seconds":10.0000000000001,"ui_consumed":0,"wall_seconds":9.994097}
+JUMP_SUITE {"case_count":1,"passed":true,"physics_hz":60}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "edited_label": "QA-001C TEXT EDIT VERIFIED",
+  "copy": "tools/phase_1_1_r1/gate_copy",
+  "headless_import_runtime": "PASS",
+  "graphical_observation": "Changed text visibly verified in actual captured window",
+  "original_56_hashes_before_equal_after": true,
+  "original_main_unchanged": true,
+  "runtime_errors": false
+}

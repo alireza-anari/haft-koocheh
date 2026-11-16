@@ -1,0 +1,13 @@
+#!/bin/bash
+root=/workspace/scratch/9fd60dbdba5c
+engine="$root/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64"
+mode=graphical
+extra=()
+if [ "$1" = fall ]; then mode=graphical_fall; extra=(--capture-only=fall_failed); fi
+if [ "$1" = check ]; then mode=graphical; extra=(--capture-only=none); fi
+args=(--path "$root/HAFT_KOOCHEH" --rendering-method gl_compatibility --rendering-driver opengl3 --audio-driver Dummy --resolution 1280x720 --position 0,0 --max-fps 60 --script res://tests/test_failure_restart.gd -- --visual --output="$root/evidence_1_3/$mode.json" "${extra[@]}")
+printf '%q\n' "$engine" "${args[@]}" > "$root/evidence_1_3/${mode}_command.txt"
+LIBGL_ALWAYS_SOFTWARE=1 "$engine" "${args[@]}" > "$root/evidence_1_3/${mode}_runtime.txt" 2>&1
+result=$?
+printf '%s\n' "$result" > "$root/evidence_1_3/${mode}_exit.txt"
+printf 'FAILURE GRAPHICAL exit %s\n' "$result"

@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python3",
+    "tests/validate_skeleton.py"
+  ],
+  "cwd": "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+  "exit_code": 0,
+  "stdout": "PASS: static configuration, main-scene references, module directories and required docs\nLIMIT: this check does not prove Godot parsing, runtime, rendering or Android export\n",
+  "stderr": ""
+}

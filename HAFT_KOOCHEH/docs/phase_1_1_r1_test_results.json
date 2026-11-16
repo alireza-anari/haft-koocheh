@@ -1,0 +1,405 @@
+{
+  "stage": "1.1-R1",
+  "status": "COMPLETE / pending managerial review",
+  "engine": "4.7.2.stable.official.ed1daf0bf Standard",
+  "qa001c": {
+    "status": "PASS",
+    "edited_label": "QA-001C TEXT EDIT VERIFIED",
+    "copy": "tools/phase_1_1_r1/gate_copy",
+    "headless_import_runtime": "PASS",
+    "graphical_observation": "Changed text visibly verified in actual captured window",
+    "original_56_hashes_before_equal_after": true,
+    "original_main_unchanged": true,
+    "runtime_errors": false
+  },
+  "qa001b": "OPEN; required before Vertical Slice",
+  "qa002": "OPEN; Android Export NOT RUN",
+  "command_results": [
+    {
+      "test": "Engine Version",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--version"
+      ],
+      "exit_code": 0,
+      "stdout": "4.7.2.stable.official.ed1daf0bf\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "test": "Static Validation",
+      "command": [
+        "python3",
+        "tests/validate_skeleton.py"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: static configuration, main-scene references, module directories and required docs\nLIMIT: this check does not prove Godot parsing, runtime, rendering or Android export\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "test": "Documentation and Scope Validation",
+      "command": [
+        "python3",
+        "tests/validate_documentation.py",
+        "--baseline",
+        "../HAFT_KOOCHEH_phase_0_2_R1.zip"
+      ],
+      "exit_code": 0,
+      "stdout": "PASS: 5 core docs; 49 local Markdown links resolve\nLIMIT: 0 external Markdown links not HTTP-tested by this validator\nPASS: 10 shared level IDs/names; 5 movement values; scoring formula; decision IDs; 22 historical planned cases retained; QA-001B and QA-002 remain open\nPASS: only approved auto-run scripts/scenes; no external asset, system manager or export preset\nPASS: 56-file baseline preserved; only permitted auto-run/docs/report/test changes; original decisions and historical QA retained\nLIMIT: this is mechanical document/scope validation; semantic review, graphics, gameplay and Android are separate\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "test": "Project Import",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--editor",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--quit"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Reopening scenes...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading central editor layout...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading plugin window layout...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Editor layout ready.\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "test": "Main Headless Runtime",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--quit-after",
+        "3"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "test": "Prototype Default Runtime",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "res://scenes/gameplay/prototype_run.tscn",
+        "--fixed-fps",
+        "60",
+        "--quit-after",
+        "180"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "test": "Auto-Run Physics and Stop",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://tests/test_auto_run.gd",
+        "--",
+        "--output=/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH/docs/phase_1_1_r1_evidence/auto_run_headless_final.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nPOSITION_SAMPLE {\"simulation_seconds\":1.0,\"tick\":60,\"vx\":280.0,\"x\":439.999694824219,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":2.0,\"tick\":120,\"vx\":280.0,\"x\":720.000427246094,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":2.99999999999999,\"tick\":180,\"vx\":280.0,\"x\":1000.00164794922,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":3.99999999999999,\"tick\":240,\"vx\":280.0,\"x\":1279.99951171875,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":4.99999999999999,\"tick\":300,\"vx\":280.0,\"x\":1559.9970703125,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":5.99999999999998,\"tick\":360,\"vx\":280.0,\"x\":1839.99462890625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":6.99999999999998,\"tick\":420,\"vx\":280.0,\"x\":2119.994140625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":7.99999999999998,\"tick\":480,\"vx\":280.0,\"x\":2399.9990234375,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":9.00000000000003,\"tick\":540,\"vx\":280.0,\"x\":2680.00390625,\"y\":599.981750488281}\nPOSITION_SAMPLE {\"simulation_seconds\":10.0000000000001,\"tick\":600,\"vx\":280.0,\"x\":2960.0087890625,\"y\":599.981750488281}\nTEST_RESULT {\"displacement_error_px\":0.00878906247862687,\"displacement_px\":2800.0087890625,\"end_position\":[2960.0087890625,599.981750488281],\"expected_from_actual_ticks_px\":2800.00000000002,\"floor_contact_ticks\":600,\"fps_status\":\"NOT RUN\",\"fps_target\":0.0,\"graphical\":false,\"ground_pass\":true,\"ground_y_range\":[599.981750488281,599.981750488281],\"horizontal_speed_range\":[280.0,280.0],\"max_vertical_speed\":0.0,\"measured_average_fps\":null,\"movement_pass\":true,\"passed\":true,\"physics_hz\":60,\"physics_ticks\":600,\"rendered_frames\":600,\"simulation_seconds\":10.0000000000001,\"start_position\":[160.0,599.981750488281],\"stop_displacement_px\":0.0,\"stop_pass\":true,\"stop_ticks\":60,\"stopped_vx\":0.0,\"wall_seconds\":0.434985}\n",
+      "stderr": "",
+      "status": "PASS"
+    },
+    {
+      "test": "Prototype Auto Start",
+      "command": [
+        "/workspace/scratch/9fd60dbdba5c/tools/godot-4.7.2/Godot_v4.7.2-stable_linux.x86_64",
+        "--headless",
+        "--path",
+        "/workspace/scratch/9fd60dbdba5c/HAFT_KOOCHEH",
+        "--fixed-fps",
+        "60",
+        "--script",
+        "res://tests/test_auto_run.gd",
+        "--",
+        "--auto-start-smoke"
+      ],
+      "exit_code": 0,
+      "stdout": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nAUTO_START_RESULT {\"floor\":true,\"passed\":true,\"physics_ticks\":120,\"vx\":280.0,\"x\":640.666748046875}\n",
+      "stderr": "",
+      "status": "PASS"
+    }
+  ],
+  "physics": {
+    "displacement_error_px": 0.00878906247862687,
+    "displacement_px": 2800.0087890625,
+    "end_position": [
+      2960.0087890625,
+      599.981750488281
+    ],
+    "expected_from_actual_ticks_px": 2800.00000000002,
+    "floor_contact_ticks": 600,
+    "fps_status": "NOT RUN",
+    "fps_target": 0.0,
+    "graphical": false,
+    "ground_pass": true,
+    "ground_y_range": [
+      599.981750488281,
+      599.981750488281
+    ],
+    "horizontal_speed_range": [
+      280.0,
+      280.0
+    ],
+    "max_vertical_speed": 0.0,
+    "measured_average_fps": null,
+    "movement_pass": true,
+    "passed": true,
+    "physics_hz": 60,
+    "physics_ticks": 600,
+    "rendered_frames": 600,
+    "simulation_seconds": 10.0000000000001,
+    "start_position": [
+      160.0,
+      599.981750488281
+    ],
+    "stop_displacement_px": 0.0,
+    "stop_pass": true,
+    "stop_ticks": 60,
+    "stopped_vx": 0.0,
+    "wall_seconds": 0.434985
+  },
+  "graphical_results": [
+    {
+      "target": 30,
+      "status": "PASS",
+      "exit_code": 0,
+      "result": {
+        "displacement_error_px": 0.00878906247862687,
+        "displacement_px": 2800.0087890625,
+        "end_position": [
+          2960.0087890625,
+          599.981750488281
+        ],
+        "expected_from_actual_ticks_px": 2800.00000000002,
+        "floor_contact_ticks": 600,
+        "fps_status": "PASS",
+        "fps_target": 30.0,
+        "graphical": true,
+        "ground_pass": true,
+        "ground_y_range": [
+          599.981750488281,
+          599.981750488281
+        ],
+        "horizontal_speed_range": [
+          280.0,
+          280.0
+        ],
+        "max_vertical_speed": 0.0,
+        "measured_average_fps": 29.9997570019683,
+        "movement_pass": true,
+        "passed": true,
+        "physics_hz": 60,
+        "physics_ticks": 600,
+        "rendered_frames": 300,
+        "simulation_seconds": 10.0000000000001,
+        "start_position": [
+          160.0,
+          599.981750488281
+        ],
+        "stop_displacement_px": 0.0,
+        "stop_pass": true,
+        "stop_ticks": 60,
+        "stopped_vx": 0.0,
+        "wall_seconds": 10.000081
+      },
+      "warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ]
+    },
+    {
+      "target": 60,
+      "status": "PASS",
+      "exit_code": 0,
+      "result": {
+        "displacement_error_px": 0.00878906247862687,
+        "displacement_px": 2800.0087890625,
+        "end_position": [
+          2960.0087890625,
+          599.981750488281
+        ],
+        "expected_from_actual_ticks_px": 2800.00000000002,
+        "floor_contact_ticks": 600,
+        "fps_status": "PASS",
+        "fps_target": 60.0,
+        "graphical": true,
+        "ground_pass": true,
+        "ground_y_range": [
+          599.981750488281,
+          599.981750488281
+        ],
+        "horizontal_speed_range": [
+          280.0,
+          280.0
+        ],
+        "max_vertical_speed": 0.0,
+        "measured_average_fps": 60.0016560457069,
+        "movement_pass": true,
+        "passed": true,
+        "physics_hz": 60,
+        "physics_ticks": 600,
+        "rendered_frames": 600,
+        "simulation_seconds": 10.0000000000001,
+        "start_position": [
+          160.0,
+          599.981750488281
+        ],
+        "stop_displacement_px": 0.0,
+        "stop_pass": true,
+        "stop_ticks": 60,
+        "stopped_vx": 0.0,
+        "wall_seconds": 9.999724
+      },
+      "warnings": [
+        "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+      ]
+    }
+  ],
+  "evidence_manifest": [
+    {
+      "path": "docs/phase_1_1_r1_evidence/.gdignore",
+      "bytes": 43,
+      "sha256": "6c8f39a9ae7b6f3d930f772bb398c22e943b61383fb1ed15d6bb5558991e0009"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/auto_run_headless.json",
+      "bytes": 809,
+      "sha256": "0f968f1cac0c933f832751aff000bbf36d9f370c924700614427b4264f8b40fb"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/auto_run_headless_final.json",
+      "bytes": 809,
+      "sha256": "0fac858ff9da3a9bfbc08721581b93963386fd43dd6cbf588b902a75e7f65b44"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/final_movement_commands.json",
+      "bytes": 3167,
+      "sha256": "b0329bb70eb96693348bf4bb1f1aa6bcd42a588e628fee9c8ce798c04851ac32"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/gate_commands.json",
+      "bytes": 2279,
+      "sha256": "1466e9413271d248dacbc04c9993d2ce044d2fd3ea4beeb835addc6c3b7c17bd"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/gate_graphical.txt",
+      "bytes": 368,
+      "sha256": "052211730d2e6bad1bb27d0ba1621ed54bb0ef792b898c4c8600ed8b3be20a67"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/gate_graphical_exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/gate_hashes_before.json",
+      "bytes": 6008,
+      "sha256": "008f4cba089476c983ee81c784bb50f9ae860c4442fc20614f3558201d3d6268"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/graphical_30.txt",
+      "bytes": 2256,
+      "sha256": "e6290386395be2a12cc25729bc378f7170952f8ba98ce85102f1ac255731bbb5"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/graphical_30_exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/graphical_60.txt",
+      "bytes": 2255,
+      "sha256": "89c1987bde98d4266a9a00e07dfb5a12eec7cb0cfc9f7bd804660e5da4147f17"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/graphical_60_exit.txt",
+      "bytes": 2,
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/implementation_commands.json",
+      "bytes": 5114,
+      "sha256": "76c4a2cbac15921a8d8e121903d120a26570878eab9478aea1355069b2f89013"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/motion_30.json",
+      "bytes": 819,
+      "sha256": "2974770bd8e672a49cb2f8937d905ffa75f1e3b62298ef0fab30d52238d5b665"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/motion_30_end.jpg",
+      "bytes": 33560,
+      "sha256": "171cdbac4e03d84000c6929ad026fd125311b2d317f37f55cf34d322965385cd"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/motion_30_start.jpg",
+      "bytes": 32677,
+      "sha256": "3b4e0895ed0eea90993eb372d50761a6f403c00a56c2f6bae6690dabb0324750"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/motion_60.json",
+      "bytes": 818,
+      "sha256": "b19ff398a61422d0964552ccbece255baef5ec07d8bcbe96ee019227f6a56e92"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/motion_60_during.jpg",
+      "bytes": 32886,
+      "sha256": "a9af37ccdb87a14921382397184f9460db2f2179b4d976fed5bb9e4120a901bc"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/mutation_checks.json",
+      "bytes": 2634,
+      "sha256": "c89c1992c18754f115a40ad288717ca4017fab446a2e50b395b922b05dcf46e6"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/native_gate_launcher.txt",
+      "bytes": 492,
+      "sha256": "028117c4e9517d18912a5e712ae1e4da9c320d584fee5d9ad7b3bed9ef8a7718"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/native_motion_launcher.txt",
+      "bytes": 555,
+      "sha256": "99e78fc9a6d0439dc9ebcb6060d8071670d50113fdb151b987c96ebe59e766c3"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/qa001c_result.json",
+      "bytes": 347,
+      "sha256": "434a7ef3685ec2410988c61e117bae972428204d32dbc26ea2965abc1486b4f9"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/qa001c_text_edit.jpg",
+      "bytes": 34151,
+      "sha256": "516ba9c6fc522daac0fd53782561868a2d73f2fa3241c995a04aa35f7c6c8682"
+    },
+    {
+      "path": "docs/phase_1_1_r1_evidence/test_red.json",
+      "bytes": 415,
+      "sha256": "33ac6603842ae38ac7dc7ee712a9ce814b45bdbb5e513a3400ad118784150cb5"
+    }
+  ],
+  "final_index_count": 90,
+  "negative_tests": "test_red.json expected failure before implementation; mutation_checks.json rejects default RUNNING and ignored disable",
+  "limitations": [
+    "Software rendering on Linux only; no Android/device validation",
+    "Average process/render FPS measured, not per-frame latency benchmark",
+    "Physics fast headless runs are simulation-time tests, not FPS tests",
+    "60 FPS final still capture missed because window had exited; during-60 and during/end-30 captures retained"
+  ]
+}
